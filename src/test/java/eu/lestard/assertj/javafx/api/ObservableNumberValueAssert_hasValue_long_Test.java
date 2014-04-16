@@ -1,8 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleLongProperty;
-import javafx.beans.value.ObservableDoubleValue;
 import javafx.beans.value.ObservableLongValue;
 import org.junit.Test;
 

@@ -1,10 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.value.ObservableDoubleValue;
 import javafx.beans.value.ObservableIntegerValue;
-import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;

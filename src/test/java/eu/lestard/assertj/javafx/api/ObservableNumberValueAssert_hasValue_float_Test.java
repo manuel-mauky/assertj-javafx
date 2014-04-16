@@ -1,9 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import javafx.beans.property.SimpleFloatProperty;
-import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.value.ObservableFloatValue;
-import javafx.beans.value.ObservableLongValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
