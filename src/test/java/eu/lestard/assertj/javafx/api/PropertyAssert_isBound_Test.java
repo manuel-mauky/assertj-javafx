@@ -10,8 +10,8 @@ public class PropertyAssert_isBound_Test {
 
     @Test
     public void should_pass_if_actual_is_bound(){
-        Property other = new SimpleBooleanProperty();
-        Property actual = new SimpleBooleanProperty();
+        Property<Boolean> other = new SimpleBooleanProperty();
+        Property<Boolean> actual = new SimpleBooleanProperty();
 
         actual.bind(other);
 
