@@ -1,5 +1,6 @@
-package eu.lestard.assertj.javafx.api;
+package eu.lestard.assertj.javafx.internal;
 
+import eu.lestard.assertj.javafx.internal.PropertyAssert;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleBooleanProperty;
 import org.junit.Test;

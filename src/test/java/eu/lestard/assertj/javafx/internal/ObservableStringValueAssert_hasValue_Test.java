@@ -1,5 +1,6 @@
-package eu.lestard.assertj.javafx.api;
+package eu.lestard.assertj.javafx.internal;
 
+import eu.lestard.assertj.javafx.internal.ObservableStringValueAssert;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableStringValue;
 import org.junit.Test;
