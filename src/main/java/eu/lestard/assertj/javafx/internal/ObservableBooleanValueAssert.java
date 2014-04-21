@@ -4,8 +4,6 @@ import javafx.beans.Observable;
 import javafx.beans.value.ObservableBooleanValue;
 import org.assertj.core.api.AbstractAssert;
 
-import org.assertj.core.internal.Objects;
-
 public class ObservableBooleanValueAssert extends AbstractAssert<ObservableBooleanValueAssert,ObservableBooleanValue>{
 
     public ObservableBooleanValueAssert(ObservableBooleanValue actual) {

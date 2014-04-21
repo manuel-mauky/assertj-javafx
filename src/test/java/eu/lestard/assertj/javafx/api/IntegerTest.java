@@ -1,0 +1,67 @@
+package eu.lestard.assertj.javafx.api;
+
+
+import eu.lestard.assertj.javafx.api.IntegerPropertyAssert;
+import javafx.beans.Observable;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.IntegerBinding;
+import javafx.beans.binding.IntegerExpression;
+import javafx.beans.property.*;
+import javafx.beans.value.ObservableIntegerValue;
+import javafx.beans.value.ObservableNumberValue;
+import org.junit.Test;
+
+import static eu.lestard.assertj.javafx.api.Assertions.*;
+
+public class IntegerTest {
+
+    @Test
+    public void testSimpleIntegerProperty() {
+        SimpleIntegerProperty actual = new SimpleIntegerProperty(1);
+        assertThat(actual).hasValue(1);
+    }
+
+    @Test
+    public void testIntegerProperty() {
+        IntegerProperty actual = new SimpleIntegerProperty(10);
+        assertThat(actual).hasValue(10);
+    }
+
+    @Test
+    public void testReadOnlyIntegerProperty(){
+        ReadOnlyIntegerProperty actual = new SimpleIntegerProperty(30);
+        assertThat(actual).hasValue(30);
+    }
+
+
+    @Test
+    public void testIntegerBinding(){
+        IntegerProperty value = new SimpleIntegerProperty(10);
+
+        final IntegerBinding actual = value.add(20);
+
+        assertThat(actual).hasValue(30);
+    }
+
+    @Test
+    public void testObservableIntegerValue(){
+        ObservableIntegerValue actual = new SimpleIntegerProperty(10);
+
+        assertThat(actual).hasValue(10);
+    }
+
+    @Test
+    public void testObservableNumberValue(){
+        ObservableNumberValue actual = new SimpleIntegerProperty(10);
+
+        assertThat(actual).hasValue(10);
+    }
+
+    @Test
+    public void testIntegerExpression(){
+        final IntegerExpression actual = IntegerExpression.integerExpression(new SimpleIntegerProperty(12));
+
+        assertThat(actual).hasValue(12);
+    }
+
+}
