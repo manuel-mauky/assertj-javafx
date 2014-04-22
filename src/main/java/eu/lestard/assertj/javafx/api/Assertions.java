@@ -9,6 +9,9 @@ import javafx.beans.value.ObservableBooleanValue;
 import javafx.beans.value.ObservableNumberValue;
 import javafx.beans.value.ObservableStringValue;
 
+/**
+ * This is the central entry point for assertions for assertj-javafx.
+ */
 public class Assertions {
 
     // Bindings

@@ -1,18 +1,21 @@
 package eu.lestard.assertj.javafx.api;
 
 
-import eu.lestard.assertj.javafx.api.IntegerPropertyAssert;
-import javafx.beans.Observable;
-import javafx.beans.binding.Bindings;
 import javafx.beans.binding.IntegerBinding;
 import javafx.beans.binding.IntegerExpression;
-import javafx.beans.property.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ReadOnlyIntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableIntegerValue;
 import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
 import static eu.lestard.assertj.javafx.api.Assertions.*;
 
+/**
+ * This test is used to find problems with overlapping parameter types.
+ * In this case all tests are focusing around Properties and Bindings of type Integer.
+ */
 public class IntegerTest {
 
     @Test

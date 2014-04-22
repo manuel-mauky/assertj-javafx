@@ -1,6 +1,5 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
 import eu.lestard.assertj.javafx.internal.ObservableStringValueAssert;
 import javafx.beans.Observable;
 import javafx.beans.binding.StringBinding;

@@ -5,11 +5,15 @@ import javafx.beans.binding.StringBinding;
 import javafx.beans.binding.StringExpression;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableStringValue;
-import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
-import static eu.lestard.assertj.javafx.api.Assertions.assertThat;
+import static eu.lestard.assertj.javafx.api.Assertions.*;
 
+
+/**
+ * This test is used to find problems with overlapping parameter types.
+ * In this case all tests are focusing around Properties and Bindings of type String.
+ */
 public class StringTest {
     @Test
     public void testSimpleStringProperty() {

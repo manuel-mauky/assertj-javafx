@@ -1,18 +1,20 @@
 package eu.lestard.assertj.javafx.api;
 
-import javafx.beans.binding.IntegerExpression;
 import javafx.beans.binding.LongBinding;
 import javafx.beans.binding.LongExpression;
 import javafx.beans.property.LongProperty;
 import javafx.beans.property.ReadOnlyLongProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.value.ObservableLongValue;
 import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
-import static eu.lestard.assertj.javafx.api.Assertions.assertThat;
+import static eu.lestard.assertj.javafx.api.Assertions.*;
 
+/**
+ * This test is used to find problems with overlapping parameter types.
+ * In this case all tests are focusing around Properties and Bindings of type Long.
+ */
 public class LongTest {
     @Test
     public void testSimpleLongProperty() {

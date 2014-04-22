@@ -2,18 +2,19 @@ package eu.lestard.assertj.javafx.api;
 
 import javafx.beans.binding.FloatBinding;
 import javafx.beans.binding.FloatExpression;
-import javafx.beans.binding.IntegerExpression;
-import javafx.beans.binding.LongExpression;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.ReadOnlyFloatProperty;
 import javafx.beans.property.SimpleFloatProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableFloatValue;
 import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
-import static eu.lestard.assertj.javafx.api.Assertions.assertThat;
+import static eu.lestard.assertj.javafx.api.Assertions.*;
 
+/**
+ * This test is used to find problems with overlapping parameter types.
+ * In this case all tests are focusing around Properties and Bindings of type Float.
+ */
 public class FloatTest {
     @Test
     public void testSimpleFloatProperty() {

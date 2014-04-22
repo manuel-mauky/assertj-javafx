@@ -1,6 +1,5 @@
 package eu.lestard.assertj.javafx.internal;
 
-import javafx.beans.Observable;
 import javafx.beans.value.ObservableBooleanValue;
 import org.assertj.core.api.AbstractAssert;
 

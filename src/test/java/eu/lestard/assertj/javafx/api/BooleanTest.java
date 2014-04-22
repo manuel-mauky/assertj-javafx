@@ -2,17 +2,18 @@ package eu.lestard.assertj.javafx.api;
 
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.binding.BooleanExpression;
-import javafx.beans.binding.IntegerExpression;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableBooleanValue;
-import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
-import static eu.lestard.assertj.javafx.api.Assertions.assertThat;
+import static eu.lestard.assertj.javafx.api.Assertions.*;
 
+/**
+ * This test is used to find problems with overlapping parameter types.
+ * In this case all tests are focusing around Properties and Bindings of type Boolean.
+ */
 public class BooleanTest {
     @Test
     public void testSimpleBooleanProperty() {
