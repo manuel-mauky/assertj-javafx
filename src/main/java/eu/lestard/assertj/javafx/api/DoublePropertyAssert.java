@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
+import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssert;
 import javafx.beans.property.DoubleProperty;
 import org.assertj.core.api.AbstractAssert;
@@ -11,7 +11,7 @@ public class DoublePropertyAssert extends AbstractAssert<DoublePropertyAssert, D
     }
 
     public DoublePropertyAssert hasValue(double expectedValue){
-        new ObservableNumberValueAssert(actual).hasValue(expectedValue);
+        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
 
         return this;
     }

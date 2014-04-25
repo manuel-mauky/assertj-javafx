@@ -1,26 +1,25 @@
 package eu.lestard.assertj.javafx.internal;
 
-import eu.lestard.assertj.javafx.internal.ObservableStringValueAssert;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableStringValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ObservableStringValueAssert_hasValue_Test {
+public class ObservableStringValueAssertions_hasValue_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value(){
         ObservableStringValue actual = new SimpleStringProperty("test");
 
-        new ObservableStringValueAssert(actual).hasValue("test");
+        new ObservableStringValueAssertions(actual).hasValue("test");
     }
 
     @Test
     public void should_pass_if_both_actual_and_expected_value_is_null(){
         ObservableStringValue actual = new SimpleStringProperty();
 
-        new ObservableStringValueAssert(actual).hasValue(null);
+        new ObservableStringValueAssertions(actual).hasValue(null);
     }
 
     @Test
@@ -28,7 +27,7 @@ public class ObservableStringValueAssert_hasValue_Test {
         try{
             ObservableStringValue actual = new SimpleStringProperty("test");
 
-            new ObservableStringValueAssert(actual).hasValue("testest");
+            new ObservableStringValueAssertions(actual).hasValue("testest");
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<\"testest\"> but was <\"test\">");
@@ -40,7 +39,7 @@ public class ObservableStringValueAssert_hasValue_Test {
         try{
             ObservableStringValue actual = new SimpleStringProperty();
 
-            new ObservableStringValueAssert(actual).hasValue("test");
+            new ObservableStringValueAssertions(actual).hasValue("test");
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<\"test\"> but was <null>");
@@ -49,6 +48,6 @@ public class ObservableStringValueAssert_hasValue_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new ObservableStringValueAssert(null).hasValue("test");
+        new ObservableStringValueAssertions(null).hasValue("test");
     }
 }

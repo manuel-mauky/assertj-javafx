@@ -1,19 +1,18 @@
 package eu.lestard.assertj.javafx.internal;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.value.ObservableFloatValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ObservableNumberValueAssert_hasValue_float_Test {
+public class ObservableNumberValueAssertions_hasValue_float_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value(){
         ObservableFloatValue actual = new SimpleFloatProperty(1234.56F);
 
-        new ObservableNumberValueAssert(actual).hasValue(1234.56F);
+        new ObservableNumberValueAssertions(actual).hasValue(1234.56F);
     }
 
     @Test
@@ -21,7 +20,7 @@ public class ObservableNumberValueAssert_hasValue_float_Test {
         try{
             ObservableFloatValue actual = new SimpleFloatProperty(1234.56F);
 
-            new ObservableNumberValueAssert(actual).hasValue(1234F);
+            new ObservableNumberValueAssertions(actual).hasValue(1234F);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<1234.0f> but was <1234.56f>");
@@ -30,6 +29,6 @@ public class ObservableNumberValueAssert_hasValue_float_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new ObservableNumberValueAssert(null).hasValue(1234.56F);
+        new ObservableNumberValueAssertions(null).hasValue(1234.56F);
     }
 }

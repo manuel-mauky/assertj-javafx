@@ -3,10 +3,10 @@ package eu.lestard.assertj.javafx.internal;
 import javafx.beans.value.ObservableBooleanValue;
 import org.assertj.core.api.AbstractAssert;
 
-public class ObservableBooleanValueAssert extends AbstractAssert<ObservableBooleanValueAssert,ObservableBooleanValue>{
+public class ObservableBooleanValueAssertions extends AbstractAssert<ObservableBooleanValueAssertions,ObservableBooleanValue>{
 
-    public ObservableBooleanValueAssert(ObservableBooleanValue actual) {
-        super(actual, ObservableBooleanValueAssert.class);
+    public ObservableBooleanValueAssertions(ObservableBooleanValue actual) {
+        super(actual, ObservableBooleanValueAssertions.class);
     }
 
     public void isTrue(){

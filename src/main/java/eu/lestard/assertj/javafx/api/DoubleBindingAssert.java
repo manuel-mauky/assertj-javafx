@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
+import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.DoubleBinding;
 import org.assertj.core.api.AbstractAssert;
@@ -12,7 +12,7 @@ public class DoubleBindingAssert extends AbstractAssert<DoubleBindingAssert, Dou
     }
 
     public DoubleBindingAssert hasValue(double expectedValue){
-        new ObservableNumberValueAssert(actual).hasValue(expectedValue);
+        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
         return this;
     }
 

@@ -1,8 +1,8 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssert;
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
-import eu.lestard.assertj.javafx.internal.ObservableStringValueAssert;
+import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions;
 import javafx.beans.binding.*;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableBooleanValue;
@@ -94,33 +94,33 @@ public class Assertions {
     // ObservableValues
 
     /**
-     * Creates a new instance of <code>{@link ObservableNumberValueAssert}</code>.
+     * Creates a new instance of <code>{@link eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions}</code>.
      *
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableNumberValueAssert assertThat(ObservableNumberValue actual){
-        return new ObservableNumberValueAssert(actual);
+    public static ObservableNumberValueAssertions assertThat(ObservableNumberValue actual){
+        return new ObservableNumberValueAssertions(actual);
     }
 
     /**
-     * Creates a new instance of <code>{@link ObservableBooleanValueAssert}</code>.
+     * Creates a new instance of <code>{@link eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions}</code>.
      *
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableBooleanValueAssert assertThat(ObservableBooleanValue actual){
-        return new ObservableBooleanValueAssert(actual);
+    public static ObservableBooleanValueAssertions assertThat(ObservableBooleanValue actual){
+        return new ObservableBooleanValueAssertions(actual);
     }
 
     /**
-     * Creates a new instance of <code>{@link ObservableStringValueAssert}</code>.
+     * Creates a new instance of <code>{@link eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions}</code>.
      *
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableStringValueAssert assertThat(ObservableStringValue actual){
-        return new ObservableStringValueAssert(actual);
+    public static ObservableStringValueAssertions assertThat(ObservableStringValue actual){
+        return new ObservableStringValueAssertions(actual);
     }
 
 

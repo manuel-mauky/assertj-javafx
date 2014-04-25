@@ -3,9 +3,9 @@ package eu.lestard.assertj.javafx.internal;
 import javafx.beans.value.ObservableStringValue;
 import org.assertj.core.api.AbstractAssert;
 
-public class ObservableStringValueAssert extends AbstractAssert<ObservableStringValueAssert,ObservableStringValue> {
-    public ObservableStringValueAssert(ObservableStringValue actual) {
-        super(actual, ObservableStringValueAssert.class);
+public class ObservableStringValueAssertions extends AbstractAssert<ObservableStringValueAssertions,ObservableStringValue> {
+    public ObservableStringValueAssertions(ObservableStringValue actual) {
+        super(actual, ObservableStringValueAssertions.class);
     }
 
 

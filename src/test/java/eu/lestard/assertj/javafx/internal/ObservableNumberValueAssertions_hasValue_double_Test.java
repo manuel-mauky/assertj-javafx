@@ -1,19 +1,18 @@
 package eu.lestard.assertj.javafx.internal;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.value.ObservableDoubleValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ObservableNumberValueAssert_hasValue_double_Test {
+public class ObservableNumberValueAssertions_hasValue_double_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value(){
         ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
 
-        new ObservableNumberValueAssert(actual).hasValue(10.123);
+        new ObservableNumberValueAssertions(actual).hasValue(10.123);
     }
 
     @Test
@@ -21,7 +20,7 @@ public class ObservableNumberValueAssert_hasValue_double_Test {
         try{
             ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
 
-            new ObservableNumberValueAssert(actual).hasValue(10.12);
+            new ObservableNumberValueAssertions(actual).hasValue(10.12);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<10.12> but was <10.123>");
@@ -30,6 +29,6 @@ public class ObservableNumberValueAssert_hasValue_double_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new ObservableNumberValueAssert(null).hasValue(10.123);
+        new ObservableNumberValueAssertions(null).hasValue(10.123);
     }
 }

@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
+import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import javafx.beans.property.ReadOnlyFloatProperty;
 import org.assertj.core.api.AbstractAssert;
 
@@ -10,7 +10,7 @@ public class ReadOnlyFloatPropertyAssert extends AbstractAssert<ReadOnlyFloatPro
     }
 
     public ReadOnlyFloatPropertyAssert hasValue(float expectedValue){
-        new ObservableNumberValueAssert(actual).hasValue(expectedValue);
+        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
 
         return this;
     }

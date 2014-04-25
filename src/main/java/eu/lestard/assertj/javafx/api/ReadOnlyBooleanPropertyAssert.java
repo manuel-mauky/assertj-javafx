@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssert;
+import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions;
 import javafx.beans.property.ReadOnlyBooleanProperty;
 import org.assertj.core.api.AbstractAssert;
 
@@ -10,13 +10,13 @@ public class ReadOnlyBooleanPropertyAssert extends AbstractAssert<ReadOnlyBoolea
     }
 
     public ReadOnlyBooleanPropertyAssert isTrue(){
-        new ObservableBooleanValueAssert(actual).isTrue();
+        new ObservableBooleanValueAssertions(actual).isTrue();
 
         return this;
     }
 
     public ReadOnlyBooleanPropertyAssert isFalse(){
-        new ObservableBooleanValueAssert(actual).isFalse();
+        new ObservableBooleanValueAssertions(actual).isFalse();
         return this;
     }
 }

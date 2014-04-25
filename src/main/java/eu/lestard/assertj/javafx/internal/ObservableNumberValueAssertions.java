@@ -4,10 +4,10 @@ import javafx.beans.value.ObservableNumberValue;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.data.Offset;
 
-public class ObservableNumberValueAssert extends AbstractAssert<ObservableNumberValueAssert, ObservableNumberValue> {
+public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNumberValueAssertions, ObservableNumberValue> {
 
-    public ObservableNumberValueAssert(ObservableNumberValue actual) {
-        super(actual, ObservableNumberValueAssert.class);
+    public ObservableNumberValueAssertions(ObservableNumberValue actual) {
+        super(actual, ObservableNumberValueAssertions.class);
     }
 
     public void hasValue(int expectedValue) {

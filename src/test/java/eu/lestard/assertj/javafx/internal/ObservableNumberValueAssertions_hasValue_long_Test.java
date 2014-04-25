@@ -1,19 +1,18 @@
 package eu.lestard.assertj.javafx.internal;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssert;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.value.ObservableLongValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ObservableNumberValueAssert_hasValue_long_Test {
+public class ObservableNumberValueAssertions_hasValue_long_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value(){
         ObservableLongValue actual = new SimpleLongProperty(1234L);
 
-        new ObservableNumberValueAssert(actual).hasValue(1234L);
+        new ObservableNumberValueAssertions(actual).hasValue(1234L);
     }
 
     @Test
@@ -21,7 +20,7 @@ public class ObservableNumberValueAssert_hasValue_long_Test {
         try{
             ObservableLongValue actual = new SimpleLongProperty(1234L);
 
-            new ObservableNumberValueAssert(actual).hasValue(123L);
+            new ObservableNumberValueAssertions(actual).hasValue(123L);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<123L> but was <1234L>");
@@ -30,6 +29,6 @@ public class ObservableNumberValueAssert_hasValue_long_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new ObservableNumberValueAssert(null).hasValue(1234L);
+        new ObservableNumberValueAssertions(null).hasValue(1234L);
     }
 }
