@@ -32,9 +32,15 @@ public class ObservableNumberValueAssertions_hasValue_double_with_offset_Test {
         new ObservableNumberValueAssertions(null).hasValue(10.123, offset(0.1));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void should_fail_if_offset_is_null(){
-        ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
-        new ObservableNumberValueAssertions(actual).hasValue(10.123, null);
+        try{
+            ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
+            new ObservableNumberValueAssertions(actual).hasValue(10.123, null);
+
+            fail("Should throw an AssertionError");
+        }catch(AssertionError error){
+            assertThat(error).hasMessageContaining("offset may not be null");
+        }
     }
 }

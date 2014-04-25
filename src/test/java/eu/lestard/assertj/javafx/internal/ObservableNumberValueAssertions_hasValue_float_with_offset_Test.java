@@ -32,10 +32,16 @@ public class ObservableNumberValueAssertions_hasValue_float_with_offset_Test {
         new ObservableNumberValueAssertions(null).hasValue(10.123F, offset(0.1F));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void should_fail_if_offset_is_null(){
-        ObservableFloatValue actual = new SimpleFloatProperty(10.123F);
-        new ObservableNumberValueAssertions(actual).hasValue(10.123F, null);
+        try{
+            ObservableFloatValue actual = new SimpleFloatProperty(10.123F);
+            new ObservableNumberValueAssertions(actual).hasValue(10.123F, null);
+
+            fail("Should throw an AssertionError");
+        }catch(AssertionError error){
+            assertThat(error).hasMessageContaining("offset may not be null");
+        }
     }
 
 }

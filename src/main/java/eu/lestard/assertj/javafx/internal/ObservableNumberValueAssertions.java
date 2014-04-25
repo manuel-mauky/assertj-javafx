@@ -58,8 +58,8 @@ public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNu
     public void hasValue(double expectedValue, Offset offset) {
         isNotNull();
 
-        if (actual == null) {
-            throw new NullPointerException("The given offset should not be null");
+        if (offset == null) {
+            failWithMessage("The given offset may not be null");
         }
 
         if (Math.abs(expectedValue - actual.doubleValue()) > offset.value.doubleValue()) {
@@ -71,8 +71,8 @@ public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNu
     public void hasValue(float expectedValue, Offset offset) {
         isNotNull();
 
-        if (actual == null) {
-            throw new NullPointerException("The given offset should not be null");
+        if (offset == null) {
+            failWithMessage("The given offset may not be null");
         }
 
         if (Math.abs(expectedValue - actual.floatValue()) > offset.value.floatValue()) {
