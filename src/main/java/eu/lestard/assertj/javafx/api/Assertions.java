@@ -1,8 +1,5 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions;
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
-import eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions;
 import javafx.beans.binding.*;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableBooleanValue;
@@ -94,33 +91,33 @@ public class Assertions {
     // ObservableValues
 
     /**
-     * Creates a new instance of <code>{@link eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions}</code>.
+     * Creates a new instance of <code>{@link ObservableNumberValueAssert}</code>.
      *
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableNumberValueAssertions assertThat(ObservableNumberValue actual){
-        return new ObservableNumberValueAssertions(actual);
+    public static ObservableNumberValueAssert assertThat(ObservableNumberValue actual){
+        return new ObservableNumberValueAssert(actual);
     }
 
     /**
-     * Creates a new instance of <code>{@link eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions}</code>.
+     * Creates a new instance of <code>{@link ObservableBooleanValueAssert}</code>.
      *
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableBooleanValueAssertions assertThat(ObservableBooleanValue actual){
-        return new ObservableBooleanValueAssertions(actual);
+    public static ObservableBooleanValueAssert assertThat(ObservableBooleanValue actual){
+        return new ObservableBooleanValueAssert(actual);
     }
 
     /**
-     * Creates a new instance of <code>{@link eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions}</code>.
+     * Creates a new instance of <code>{@link ObservableStringValueAssert}</code>.
      *
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableStringValueAssertions assertThat(ObservableStringValue actual){
-        return new ObservableStringValueAssertions(actual);
+    public static ObservableStringValueAssert assertThat(ObservableStringValue actual){
+        return new ObservableStringValueAssert(actual);
     }
 
 

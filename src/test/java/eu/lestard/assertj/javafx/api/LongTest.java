@@ -62,7 +62,7 @@ public class LongTest {
     public void testLongExpression(){
         final LongExpression actual = LongExpression.longExpression(new SimpleLongProperty(12l));
 
-        assertThat(actual).hasValue(12);
+        assertThat(actual).hasValue(12l);
     }
 
 }
