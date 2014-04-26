@@ -5,7 +5,7 @@ import org.assertj.core.api.AbstractAssert;
 
 public class ObservableObjectValueAssertions<T> extends AbstractAssert<ObservableObjectValueAssertions<T>, ObservableObjectValue<T>> {
 
-    protected ObservableObjectValueAssertions(ObservableObjectValue<T> actual) {
+    public ObservableObjectValueAssertions(ObservableObjectValue<T> actual) {
         super(actual, ObservableObjectValueAssertions.class);
     }
 

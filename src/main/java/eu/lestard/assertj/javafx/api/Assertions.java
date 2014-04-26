@@ -4,6 +4,7 @@ import javafx.beans.binding.*;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableBooleanValue;
 import javafx.beans.value.ObservableNumberValue;
+import javafx.beans.value.ObservableObjectValue;
 import javafx.beans.value.ObservableStringValue;
 
 /**
@@ -13,7 +14,11 @@ import javafx.beans.value.ObservableStringValue;
  */
 public class Assertions {
 
+
+    /*************************************************************************/
     // Bindings
+    /*************************************************************************/
+
 
     /**
      * Creates a new instance of <code>{@link BindingAssert}</code>.
@@ -86,9 +91,22 @@ public class Assertions {
         return new StringBindingAssert(actual);
     }
 
+    /**
+     * Creates a new instance of <code>{@link ObjectBindingAssert}</code>.
+     *
+     * @param <T> the generic type of the object binding.
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    public static <T> ObjectBindingAssert<T> assertThat(ObjectBinding<T> actual){
+        return new ObjectBindingAssert<>(actual);
+    }
 
 
+    /*************************************************************************/
     // ObservableValues
+    /*************************************************************************/
+
 
     /**
      * Creates a new instance of <code>{@link ObservableNumberValueAssert}</code>.
@@ -120,8 +138,22 @@ public class Assertions {
         return new ObservableStringValueAssert(actual);
     }
 
+    /**
+     * Creates a new instance of <code>{@link ObservableObjectValueAssert}</code>.
+     *
+     * @param <T> the generic type of the observable object value.
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    public static <T> ObservableObjectValueAssert<T> assertThat(ObservableObjectValue<T> actual){
+        return new ObservableObjectValueAssert<>(actual);
+    }
 
+
+    /*************************************************************************/
     // Properties
+    /*************************************************************************/
+
 
     /**
      * Creates a new instance of <code>{@link BooleanPropertyAssert}</code>.
@@ -183,7 +215,22 @@ public class Assertions {
         return new StringPropertyAssert(actual);
     }
 
+    /**
+     * Creates a new instance of <code>{@link ObjectPropertyAssert}</code>.
+     *
+     * @param <T> the generic type of the object property.
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    public static <T> ObjectPropertyAssert<T> assertThat(ObjectProperty<T> actual){
+        return new ObjectPropertyAssert<>(actual);
+    }
+
+
+    /*************************************************************************/
     // ReadOnly Properties
+    /*************************************************************************/
+
 
     /**
      * Creates a new instance of <code>{@link ReadOnlyBooleanPropertyAssert}</code>.
@@ -243,6 +290,17 @@ public class Assertions {
      */
     public static ReadOnlyStringPropertyAssert assertThat(ReadOnlyStringProperty actual){
         return new ReadOnlyStringPropertyAssert(actual);
+    }
+
+    /**
+     * Creates a new instance of <code>{@link ReadOnlyObjectPropertyAssert}</code>.
+     *
+     * @param <T> the generic type of the object property.
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    public static <T> ReadOnlyObjectPropertyAssert<T> assertThat(ReadOnlyObjectProperty<T> actual){
+        return new ReadOnlyObjectPropertyAssert<>(actual);
     }
 
 }
