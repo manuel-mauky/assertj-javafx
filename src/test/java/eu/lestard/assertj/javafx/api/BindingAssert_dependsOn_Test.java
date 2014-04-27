@@ -2,10 +2,8 @@ package eu.lestard.assertj.javafx.api;
 
 import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
-import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;

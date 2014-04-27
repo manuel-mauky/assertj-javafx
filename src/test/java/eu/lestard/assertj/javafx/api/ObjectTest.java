@@ -4,10 +4,10 @@ import eu.lestard.assertj.javafx.internal.TestPerson;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.binding.ObjectExpression;
-import javafx.beans.property.*;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableObjectValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,11 +47,7 @@ public class ObjectTest {
 
     @Test
     public void testObjectBinding(){
-        // this is a workaround to "create" an ObjectBinding. Maybe there is a better way to do this?
-        ObservableList<TestPerson> list = FXCollections.observableArrayList();
-        list.add(person);
-
-        ObjectBinding<TestPerson> actual = Bindings.valueAt(list, 0);
+        ObjectBinding<TestPerson> actual = Bindings.createObjectBinding(()-> person);
 
         assertThat(actual).hasValue(person);
     }

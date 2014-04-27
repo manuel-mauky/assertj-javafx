@@ -1,6 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.StringBinding;
 import org.assertj.core.api.AbstractAssert;
@@ -19,6 +20,16 @@ public class StringBindingAssert extends AbstractAssert<StringBindingAssert, Str
 
     public StringBindingAssert dependsOn(Observable observable){
         new BindingAssert(actual).dependsOn(observable);
+        return this;
+    }
+
+    public StringBindingAssert hasNullValue() {
+        new ObservableValueAssertions<>(actual).hasNullValue();
+        return this;
+    }
+
+    public StringBindingAssert hasNotNullValue() {
+        new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;
     }
 }

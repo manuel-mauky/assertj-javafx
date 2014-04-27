@@ -1,6 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.value.ObservableStringValue;
 import org.assertj.core.api.AbstractAssert;
 
@@ -15,4 +16,13 @@ public class ObservableStringValueAssert extends AbstractAssert<ObservableString
         return this;
     }
 
+    public ObservableStringValueAssert hasNullValue() {
+        new ObservableValueAssertions<>(actual).hasNullValue();
+        return this;
+    }
+
+    public ObservableStringValueAssert hasNotNullValue() {
+        new ObservableValueAssertions<>(actual).hasNotNullValue();
+        return this;
+    }
 }

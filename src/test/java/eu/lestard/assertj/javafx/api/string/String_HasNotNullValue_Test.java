@@ -1,53 +1,48 @@
-package eu.lestard.assertj.javafx.api;
+package eu.lestard.assertj.javafx.api.string;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.binding.StringExpression;
-import javafx.beans.property.*;
+import javafx.beans.property.ReadOnlyStringProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableStringValue;
 import org.junit.Test;
 
 import static eu.lestard.assertj.javafx.api.Assertions.*;
 
-
-/**
- * This test is used to find problems with overlapping parameter types.
- * In this case all tests are focusing around Properties and Bindings of type String.
- */
-public class StringTest {
-
+public class String_HasNotNullValue_Test {
     @Test
     public void testSimpleStringProperty() {
         SimpleStringProperty actual = new SimpleStringProperty("test");
-        assertThat(actual).hasValue("test");
+        assertThat(actual).hasNotNullValue();
     }
 
     @Test
     public void testStringProperty() {
         StringProperty actual = new SimpleStringProperty("test");
-        assertThat(actual).hasValue("test");
+        assertThat(actual).hasNotNullValue();
     }
 
     @Test
     public void testReadOnlyStringProperty(){
         ReadOnlyStringProperty actual = new SimpleStringProperty("test");
-        assertThat(actual).hasValue("test");
+        assertThat(actual).hasNotNullValue();
     }
 
 
     @Test
     public void testStringBinding(){
-        IntegerProperty property = new SimpleIntegerProperty(12);
-        final StringBinding actual = property.asString();
+        final StringBinding actual = Bindings.createStringBinding(() -> "test");
 
-        assertThat(actual).hasValue("12");
+        assertThat(actual).hasNotNullValue();
     }
 
     @Test
     public void testStringExpression(){
-        final StringExpression actual = Bindings.concat("hello", "world");
+        final StringExpression actual = Bindings.createStringBinding(() -> "test");
 
-        assertThat(actual).hasValue("helloworld");
+        assertThat(actual).hasNotNullValue();
     }
 
 
@@ -55,6 +50,6 @@ public class StringTest {
     public void testObservableStringValue(){
         ObservableStringValue actual = new SimpleStringProperty("test");
 
-        assertThat(actual).hasValue("test");
+        assertThat(actual).hasNotNullValue();
     }
 }
