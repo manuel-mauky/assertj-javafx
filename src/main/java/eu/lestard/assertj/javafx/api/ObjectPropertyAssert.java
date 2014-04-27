@@ -12,7 +12,7 @@ public class ObjectPropertyAssert<T> extends AbstractAssert<ObjectPropertyAssert
     }
 
     public ObjectPropertyAssert<T> hasValue(T expectedValue){
-        new ObservableObjectValueAssertions(actual).hasValue(expectedValue);
+        new ObservableObjectValueAssertions<>(actual).hasValue(expectedValue);
         return this;
     }
 

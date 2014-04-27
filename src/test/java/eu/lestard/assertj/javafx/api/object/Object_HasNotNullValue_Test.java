@@ -24,33 +24,33 @@ public class Object_HasNotNullValue_Test {
 
     @Test
     public void testSimpleObjectProperty() {
-        SimpleObjectProperty actual = new SimpleObjectProperty(person);
+        SimpleObjectProperty<TestPerson> actual = new SimpleObjectProperty<>(person);
         assertThat(actual).hasNotNullValue();
     }
 
     @Test
     public void testObjectProperty() {
-        ObjectProperty actual = new SimpleObjectProperty(person);
+        ObjectProperty<TestPerson> actual = new SimpleObjectProperty<>(person);
         assertThat(actual).hasNotNullValue();
     }
 
     @Test
     public void testReadOnlyObjectProperty(){
-        ReadOnlyObjectProperty actual = new SimpleObjectProperty(person);
+        ReadOnlyObjectProperty<TestPerson> actual = new SimpleObjectProperty<>(person);
         assertThat(actual).hasNotNullValue();
     }
 
 
     @Test
     public void testObjectBinding(){
-        final ObjectBinding actual = Bindings.createObjectBinding(() -> person);
+        final ObjectBinding<TestPerson> actual = Bindings.createObjectBinding(() -> person);
 
         assertThat(actual).hasNotNullValue();
     }
 
     @Test
     public void testObjectExpression(){
-        final ObjectExpression actual = Bindings.createObjectBinding(() -> person);
+        final ObjectExpression<TestPerson> actual = Bindings.createObjectBinding(() -> person);
 
         assertThat(actual).hasNotNullValue();
     }
@@ -58,7 +58,7 @@ public class Object_HasNotNullValue_Test {
 
     @Test
     public void testObservableObjectValue(){
-        ObservableObjectValue actual = new SimpleObjectProperty(person);
+        ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>(person);
 
         assertThat(actual).hasNotNullValue();
     }

@@ -13,7 +13,7 @@ public class ObservableObjectValueAssertions_hasValue_Test {
         TestPerson person = new TestPerson("Name");
         ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>(person);
 
-        new ObservableObjectValueAssertions(actual).hasValue(person);
+        new ObservableObjectValueAssertions<>(actual).hasValue(person);
     }
 
     @Test
@@ -24,7 +24,7 @@ public class ObservableObjectValueAssertions_hasValue_Test {
 
             ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>(person);
 
-            new ObservableObjectValueAssertions(actual).hasValue(other);
+            new ObservableObjectValueAssertions<>(actual).hasValue(other);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<Other> but was <Name>");
@@ -37,7 +37,7 @@ public class ObservableObjectValueAssertions_hasValue_Test {
             TestPerson person = new TestPerson("Name");
             ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>(person);
 
-            new ObservableObjectValueAssertions(actual).hasValue(null);
+            new ObservableObjectValueAssertions<>(actual).hasValue(null);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("expected value may not be null");
@@ -46,7 +46,7 @@ public class ObservableObjectValueAssertions_hasValue_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new ObservableObjectValueAssertions(null).hasValue(new TestPerson("Name"));
+        new ObservableObjectValueAssertions<>(null).hasValue(new TestPerson("Name"));
     }
 
 }

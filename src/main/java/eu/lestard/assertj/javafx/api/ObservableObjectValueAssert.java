@@ -12,7 +12,7 @@ public class ObservableObjectValueAssert<T> extends AbstractAssert<ObservableObj
     }
 
     public ObservableObjectValueAssert<T> hasValue(T expectedValue){
-        new ObservableObjectValueAssertions(actual).hasValue(expectedValue);
+        new ObservableObjectValueAssertions<>(actual).hasValue(expectedValue);
         return this;
     }
 

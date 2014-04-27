@@ -62,7 +62,7 @@ public class ObjectTest {
 
     @Test
     public void testObservableObjectValue(){
-        ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty(person);
+        ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>(person);
 
         assertThat(actual).hasValue(person);
     }

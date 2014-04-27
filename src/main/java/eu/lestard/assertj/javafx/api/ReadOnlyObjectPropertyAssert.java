@@ -12,7 +12,7 @@ public class ReadOnlyObjectPropertyAssert<T> extends AbstractAssert<ReadOnlyObje
     }
 
     public ReadOnlyObjectPropertyAssert<T> hasValue(T expectedValue){
-        new ObservableObjectValueAssertions(actual).hasValue(expectedValue);
+        new ObservableObjectValueAssertions<>(actual).hasValue(expectedValue);
         return this;
     }
 

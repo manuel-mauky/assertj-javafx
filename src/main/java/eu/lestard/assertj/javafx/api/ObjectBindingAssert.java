@@ -12,7 +12,7 @@ public class ObjectBindingAssert<T> extends AbstractAssert<ObjectBindingAssert<T
     }
 
     public ObjectBindingAssert<T> hasValue(T expectedValue){
-        new ObservableObjectValueAssertions(actual).hasValue(expectedValue);
+        new ObservableObjectValueAssertions<>(actual).hasValue(expectedValue);
         return this;
     }
 

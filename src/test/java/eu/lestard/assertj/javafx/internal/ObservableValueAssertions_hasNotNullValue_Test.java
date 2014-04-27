@@ -12,7 +12,7 @@ public class ObservableValueAssertions_hasNotNullValue_Test {
     public void should_pass_if_actual_has_not_a_null_value(){
         ObservableValue<String> actual = new SimpleStringProperty("test");
 
-        new ObservableValueAssertions(actual).hasNotNullValue();
+        new ObservableValueAssertions<>(actual).hasNotNullValue();
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ObservableValueAssertions_hasNotNullValue_Test {
         try{
             ObservableValue<String> actual = new SimpleStringProperty();
 
-            new ObservableValueAssertions(actual).hasNotNullValue();
+            new ObservableValueAssertions<>(actual).hasNotNullValue();
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("Expected observable to not have a value of null");

@@ -1,5 +1,6 @@
 package eu.lestard.assertj.javafx.api.object;
 
+import eu.lestard.assertj.javafx.internal.TestPerson;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.binding.ObjectExpression;
@@ -15,33 +16,33 @@ public class Object_HasNullValue_Test {
 
     @Test
     public void testSimpleObjectProperty() {
-        SimpleObjectProperty actual = new SimpleObjectProperty();
+        SimpleObjectProperty<TestPerson> actual = new SimpleObjectProperty<>();
         assertThat(actual).hasNullValue();
     }
 
     @Test
     public void testObjectProperty() {
-        ObjectProperty actual = new SimpleObjectProperty();
+        ObjectProperty<TestPerson> actual = new SimpleObjectProperty<>();
         assertThat(actual).hasNullValue();
     }
 
     @Test
     public void testReadOnlyObjectProperty(){
-        ReadOnlyObjectProperty actual = new SimpleObjectProperty();
+        ReadOnlyObjectProperty<TestPerson> actual = new SimpleObjectProperty<>();
         assertThat(actual).hasNullValue();
     }
 
 
     @Test
     public void testObjectBinding(){
-        final ObjectBinding actual = Bindings.createObjectBinding(() -> null);
+        final ObjectBinding<TestPerson> actual = Bindings.createObjectBinding(() -> null);
 
         assertThat(actual).hasNullValue();
     }
 
     @Test
     public void testObjectExpression(){
-        final ObjectExpression actual = Bindings.createObjectBinding(() -> null);
+        final ObjectExpression<TestPerson> actual = Bindings.createObjectBinding(() -> null);
 
         assertThat(actual).hasNullValue();
     }
@@ -49,7 +50,7 @@ public class Object_HasNullValue_Test {
 
     @Test
     public void testObservableObjectValue(){
-        ObservableObjectValue actual = new SimpleObjectProperty();
+        ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>();
 
         assertThat(actual).hasNullValue();
     }
