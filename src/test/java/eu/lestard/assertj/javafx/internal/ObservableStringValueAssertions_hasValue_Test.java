@@ -16,10 +16,15 @@ public class ObservableStringValueAssertions_hasValue_Test {
     }
 
     @Test
-    public void should_pass_if_both_actual_and_expected_value_is_null(){
-        ObservableStringValue actual = new SimpleStringProperty();
+    public void should_fail_if_expected_value_is_null(){
+        try{
+            ObservableStringValue actual = new SimpleStringProperty("test");
 
-        new ObservableStringValueAssertions(actual).hasValue(null);
+            new ObservableStringValueAssertions(actual).hasValue(null);
+            fail("Should throw an AssertionError");
+        }catch(AssertionError error){
+            assertThat(error).hasMessageContaining("expected value may not be null");
+        }
     }
 
     @Test
