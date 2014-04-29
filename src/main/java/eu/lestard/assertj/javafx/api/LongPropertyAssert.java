@@ -1,7 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
-import eu.lestard.assertj.javafx.internal.PropertyAssert;
+import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.LongProperty;
 import org.assertj.core.api.AbstractAssert;
 
@@ -18,7 +18,7 @@ public class LongPropertyAssert extends AbstractAssert<LongPropertyAssert, LongP
     }
 
     public LongPropertyAssert isBound(){
-        new PropertyAssert(actual).isBound();
+        new PropertyAssertions(actual).isBound();
 
         return this;
     }

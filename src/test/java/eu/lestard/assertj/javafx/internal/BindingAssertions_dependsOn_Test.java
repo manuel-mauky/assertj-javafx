@@ -1,4 +1,4 @@
-package eu.lestard.assertj.javafx.api;
+package eu.lestard.assertj.javafx.internal;
 
 import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
 
 
-public class BindingAssert_dependsOn_Test {
+public class BindingAssertions_dependsOn_Test {
 
     @Test
     public void should_pass_if_actual_depends_on_given_value() {
@@ -17,7 +17,7 @@ public class BindingAssert_dependsOn_Test {
 
         Binding actual = Bindings.add(dependency, 10);
 
-        new BindingAssert(actual).dependsOn(dependency);
+        new BindingAssertions(actual).dependsOn(dependency);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class BindingAssert_dependsOn_Test {
 
             Binding actual = Bindings.add(dependency, 10);
 
-            new BindingAssert(actual).dependsOn(noDependency);
+            new BindingAssertions(actual).dependsOn(noDependency);
             fail("Should throw an AssertionError");
         } catch (AssertionError error) {
             assertThat(error).hasMessageContaining("to depend on");
@@ -38,13 +38,13 @@ public class BindingAssert_dependsOn_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new BindingAssert(null).dependsOn(new SimpleDoubleProperty(10));
+        new BindingAssertions(null).dependsOn(new SimpleDoubleProperty(10));
     }
 
     @Test(expected = NullPointerException.class)
     public void should_fail_if_given_value_is_null(){
         Binding actual = Bindings.add(new SimpleDoubleProperty(10), 10);
-        new BindingAssert(actual).dependsOn(null);
+        new BindingAssertions(actual).dependsOn(null);
     }
 
 }

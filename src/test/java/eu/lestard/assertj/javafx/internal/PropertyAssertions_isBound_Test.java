@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class PropertyAssert_isBound_Test {
+public class PropertyAssertions_isBound_Test {
 
     @Test
     public void should_pass_if_actual_is_bound(){
@@ -15,7 +15,7 @@ public class PropertyAssert_isBound_Test {
 
         actual.bind(other);
 
-        new PropertyAssert(actual).isBound();
+        new PropertyAssertions(actual).isBound();
     }
 
     @Test
@@ -23,7 +23,7 @@ public class PropertyAssert_isBound_Test {
         try{
             Property actual = new SimpleBooleanProperty();
 
-            new PropertyAssert(actual).isBound();
+            new PropertyAssertions(actual).isBound();
             fail("should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("to be bound but was not.");
@@ -32,7 +32,7 @@ public class PropertyAssert_isBound_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new PropertyAssert(null).isBound();
+        new PropertyAssertions(null).isBound();
     }
 
 

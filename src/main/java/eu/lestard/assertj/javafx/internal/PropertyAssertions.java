@@ -3,10 +3,10 @@ package eu.lestard.assertj.javafx.internal;
 import javafx.beans.property.Property;
 import org.assertj.core.api.AbstractAssert;
 
-public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
+public class PropertyAssertions extends AbstractAssert<PropertyAssertions, Property> {
 
-    public PropertyAssert(Property actual) {
-        super(actual, PropertyAssert.class);
+    public PropertyAssertions(Property actual) {
+        super(actual, PropertyAssertions.class);
     }
 
     public void isBound(){
@@ -16,4 +16,5 @@ public class PropertyAssert extends AbstractAssert<PropertyAssert, Property> {
             failWithMessage("Expecting actual to be bound but was not.");
         }
     }
+
 }
