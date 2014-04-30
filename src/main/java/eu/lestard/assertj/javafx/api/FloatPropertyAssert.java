@@ -5,6 +5,15 @@ import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.FloatProperty;
 import org.assertj.core.api.AbstractAssert;
 
+/**
+ * Assertion methods for {@link FloatProperty}s.
+ *
+ * <p> To create an instance of this class, invoke
+ * <code>{@link eu.lestard.assertj.javafx.api.Assertions#assertThat(FloatProperty)}</code>.
+ * </p>
+ *
+ * @author manuel mauky
+ */
 public class FloatPropertyAssert extends AbstractAssert<FloatPropertyAssert, FloatProperty> {
 
     protected FloatPropertyAssert(FloatProperty actual) {
@@ -12,13 +21,13 @@ public class FloatPropertyAssert extends AbstractAssert<FloatPropertyAssert, Flo
     }
 
 
-    public FloatPropertyAssert hasValue(float expectedValue){
+    public FloatPropertyAssert hasValue(float expectedValue) {
         new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
 
         return this;
     }
 
-    public FloatPropertyAssert isBound(){
+    public FloatPropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
 
         return this;

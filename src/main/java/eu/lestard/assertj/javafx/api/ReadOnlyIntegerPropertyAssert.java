@@ -5,12 +5,21 @@ import javafx.beans.property.ReadOnlyIntegerProperty;
 import org.assertj.core.api.AbstractAssert;
 
 
-public class ReadOnlyIntegerPropertyAssert extends AbstractAssert<ReadOnlyIntegerPropertyAssert, ReadOnlyIntegerProperty>{
+/**
+ * Assertion methods for {@link ReadOnlyIntegerProperty}s.
+ *
+ * <p> To create an instance of this class, invoke
+ * <code>{@link eu.lestard.assertj.javafx.api.Assertions#assertThat(ReadOnlyIntegerProperty)}</code>.
+ * </p>
+ *
+ * @author manuel mauky
+ */
+public class ReadOnlyIntegerPropertyAssert extends AbstractAssert<ReadOnlyIntegerPropertyAssert, ReadOnlyIntegerProperty> {
     protected ReadOnlyIntegerPropertyAssert(ReadOnlyIntegerProperty actual) {
         super(actual, ReadOnlyIntegerPropertyAssert.class);
     }
 
-    public ReadOnlyIntegerPropertyAssert hasValue(int expectedValue){
+    public ReadOnlyIntegerPropertyAssert hasValue(int expectedValue) {
         new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
 
         return this;

@@ -14,7 +14,6 @@ import javafx.beans.value.ObservableStringValue;
  */
 public class Assertions {
 
-
     /*************************************************************************/
     // Bindings
     /*************************************************************************/
@@ -26,7 +25,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static BindingAssert assertThat(Binding actual){
+    public static BindingAssert assertThat(Binding actual) {
         return new BindingAssert(actual);
     }
 
@@ -36,7 +35,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static BooleanBindingAssert assertThat(BooleanBinding actual){
+    public static BooleanBindingAssert assertThat(BooleanBinding actual) {
         return new BooleanBindingAssert(actual);
     }
 
@@ -46,7 +45,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static DoubleBindingAssert assertThat(DoubleBinding actual){
+    public static DoubleBindingAssert assertThat(DoubleBinding actual) {
         return new DoubleBindingAssert(actual);
     }
 
@@ -56,7 +55,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static FloatBindingAssert assertThat(FloatBinding actual){
+    public static FloatBindingAssert assertThat(FloatBinding actual) {
         return new FloatBindingAssert(actual);
     }
 
@@ -66,7 +65,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static IntegerBindingAssert assertThat(IntegerBinding actual){
+    public static IntegerBindingAssert assertThat(IntegerBinding actual) {
         return new IntegerBindingAssert(actual);
     }
 
@@ -76,7 +75,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static LongBindingAssert assertThat(LongBinding actual){
+    public static LongBindingAssert assertThat(LongBinding actual) {
         return new LongBindingAssert(actual);
     }
 
@@ -87,21 +86,20 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static StringBindingAssert assertThat(StringBinding actual){
+    public static StringBindingAssert assertThat(StringBinding actual) {
         return new StringBindingAssert(actual);
     }
 
     /**
      * Creates a new instance of <code>{@link ObjectBindingAssert}</code>.
      *
-     * @param <T> the generic type of the object binding.
+     * @param <T>    the generic type of the object binding.
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static <T> ObjectBindingAssert<T> assertThat(ObjectBinding<T> actual){
+    public static <T> ObjectBindingAssert<T> assertThat(ObjectBinding<T> actual) {
         return new ObjectBindingAssert<>(actual);
     }
-
 
     /*************************************************************************/
     // ObservableValues
@@ -114,7 +112,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableNumberValueAssert assertThat(ObservableNumberValue actual){
+    public static ObservableNumberValueAssert assertThat(ObservableNumberValue actual) {
         return new ObservableNumberValueAssert(actual);
     }
 
@@ -124,7 +122,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableBooleanValueAssert assertThat(ObservableBooleanValue actual){
+    public static ObservableBooleanValueAssert assertThat(ObservableBooleanValue actual) {
         return new ObservableBooleanValueAssert(actual);
     }
 
@@ -134,21 +132,20 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ObservableStringValueAssert assertThat(ObservableStringValue actual){
+    public static ObservableStringValueAssert assertThat(ObservableStringValue actual) {
         return new ObservableStringValueAssert(actual);
     }
 
     /**
      * Creates a new instance of <code>{@link ObservableObjectValueAssert}</code>.
      *
-     * @param <T> the generic type of the observable object value.
+     * @param <T>    the generic type of the observable object value.
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static <T> ObservableObjectValueAssert<T> assertThat(ObservableObjectValue<T> actual){
+    public static <T> ObservableObjectValueAssert<T> assertThat(ObservableObjectValue<T> actual) {
         return new ObservableObjectValueAssert<>(actual);
     }
-
 
     /*************************************************************************/
     // Properties
@@ -161,7 +158,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static BooleanPropertyAssert assertThat(BooleanProperty actual){
+    public static BooleanPropertyAssert assertThat(BooleanProperty actual) {
         return new BooleanPropertyAssert(actual);
     }
 
@@ -171,7 +168,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static DoublePropertyAssert assertThat(DoubleProperty actual){
+    public static DoublePropertyAssert assertThat(DoubleProperty actual) {
         return new DoublePropertyAssert(actual);
     }
 
@@ -181,7 +178,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static FloatPropertyAssert assertThat(FloatProperty actual){
+    public static FloatPropertyAssert assertThat(FloatProperty actual) {
         return new FloatPropertyAssert(actual);
     }
 
@@ -191,7 +188,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static IntegerPropertyAssert assertThat(IntegerProperty actual){
+    public static IntegerPropertyAssert assertThat(IntegerProperty actual) {
         return new IntegerPropertyAssert(actual);
     }
 
@@ -201,7 +198,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static LongPropertyAssert assertThat(LongProperty actual){
+    public static LongPropertyAssert assertThat(LongProperty actual) {
         return new LongPropertyAssert(actual);
     }
 
@@ -211,21 +208,20 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static StringPropertyAssert assertThat(StringProperty actual){
+    public static StringPropertyAssert assertThat(StringProperty actual) {
         return new StringPropertyAssert(actual);
     }
 
     /**
      * Creates a new instance of <code>{@link ObjectPropertyAssert}</code>.
      *
-     * @param <T> the generic type of the object property.
+     * @param <T>    the generic type of the object property.
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static <T> ObjectPropertyAssert<T> assertThat(ObjectProperty<T> actual){
+    public static <T> ObjectPropertyAssert<T> assertThat(ObjectProperty<T> actual) {
         return new ObjectPropertyAssert<>(actual);
     }
-
 
     /*************************************************************************/
     // ReadOnly Properties
@@ -238,7 +234,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ReadOnlyBooleanPropertyAssert assertThat(ReadOnlyBooleanProperty actual){
+    public static ReadOnlyBooleanPropertyAssert assertThat(ReadOnlyBooleanProperty actual) {
         return new ReadOnlyBooleanPropertyAssert(actual);
     }
 
@@ -248,7 +244,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ReadOnlyDoublePropertyAssert assertThat(ReadOnlyDoubleProperty actual){
+    public static ReadOnlyDoublePropertyAssert assertThat(ReadOnlyDoubleProperty actual) {
         return new ReadOnlyDoublePropertyAssert(actual);
     }
 
@@ -258,7 +254,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ReadOnlyFloatPropertyAssert assertThat(ReadOnlyFloatProperty actual){
+    public static ReadOnlyFloatPropertyAssert assertThat(ReadOnlyFloatProperty actual) {
         return new ReadOnlyFloatPropertyAssert(actual);
     }
 
@@ -268,7 +264,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ReadOnlyIntegerPropertyAssert assertThat(ReadOnlyIntegerProperty actual){
+    public static ReadOnlyIntegerPropertyAssert assertThat(ReadOnlyIntegerProperty actual) {
         return new ReadOnlyIntegerPropertyAssert(actual);
     }
 
@@ -278,7 +274,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ReadOnlyLongPropertyAssert assertThat(ReadOnlyLongProperty actual){
+    public static ReadOnlyLongPropertyAssert assertThat(ReadOnlyLongProperty actual) {
         return new ReadOnlyLongPropertyAssert(actual);
     }
 
@@ -288,18 +284,18 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static ReadOnlyStringPropertyAssert assertThat(ReadOnlyStringProperty actual){
+    public static ReadOnlyStringPropertyAssert assertThat(ReadOnlyStringProperty actual) {
         return new ReadOnlyStringPropertyAssert(actual);
     }
 
     /**
      * Creates a new instance of <code>{@link ReadOnlyObjectPropertyAssert}</code>.
      *
-     * @param <T> the generic type of the object property.
+     * @param <T>    the generic type of the object property.
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static <T> ReadOnlyObjectPropertyAssert<T> assertThat(ReadOnlyObjectProperty<T> actual){
+    public static <T> ReadOnlyObjectPropertyAssert<T> assertThat(ReadOnlyObjectProperty<T> actual) {
         return new ReadOnlyObjectPropertyAssert<>(actual);
     }
 
