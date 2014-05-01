@@ -1,6 +1,5 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableObjectValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.value.ObservableObjectValue;
 import org.assertj.core.api.AbstractAssert;
@@ -21,7 +20,7 @@ public class ObservableObjectValueAssert<T> extends AbstractAssert<ObservableObj
     }
 
     public ObservableObjectValueAssert<T> hasValue(T expectedValue) {
-        new ObservableObjectValueAssertions<>(actual).hasValue(expectedValue);
+        new ObservableValueAssertions<>(actual).hasValue(expectedValue);
         return this;
     }
 
