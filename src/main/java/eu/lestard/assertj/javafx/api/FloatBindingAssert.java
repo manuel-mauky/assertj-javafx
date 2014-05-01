@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.FloatBinding;
 import org.assertj.core.api.AbstractAssert;
@@ -21,7 +21,8 @@ public class FloatBindingAssert extends AbstractAssert<FloatBindingAssert, Float
     }
 
     public FloatBindingAssert hasValue(float expectedValue) {
-        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
+        new ObservableValueAssertions<>(actual).hasValue(expectedValue);
+
         return this;
     }
 

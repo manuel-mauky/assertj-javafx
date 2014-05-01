@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.IntegerProperty;
 import org.assertj.core.api.AbstractAssert;
@@ -20,7 +20,8 @@ public class IntegerPropertyAssert extends AbstractAssert<IntegerPropertyAssert,
     }
 
     public IntegerPropertyAssert hasValue(int expectedValue) {
-        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
+        new ObservableValueAssertions<>(actual).hasValue(expectedValue);
+
         return this;
     }
 

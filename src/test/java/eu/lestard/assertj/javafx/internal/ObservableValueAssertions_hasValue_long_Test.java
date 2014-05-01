@@ -6,13 +6,13 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ObservableNumberValueAssertions_hasValue_long_Test {
+public class ObservableValueAssertions_hasValue_long_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value(){
         ObservableLongValue actual = new SimpleLongProperty(1234L);
 
-        new ObservableNumberValueAssertions(actual).hasValue(1234L);
+        new ObservableValueAssertions<>(actual).hasValue(1234L);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ObservableNumberValueAssertions_hasValue_long_Test {
         try{
             ObservableLongValue actual = new SimpleLongProperty(1234L);
 
-            new ObservableNumberValueAssertions(actual).hasValue(123L);
+            new ObservableValueAssertions<>(actual).hasValue(123L);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
             assertThat(error).hasMessageContaining("<123L> but was <1234L>");
@@ -29,6 +29,6 @@ public class ObservableNumberValueAssertions_hasValue_long_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new ObservableNumberValueAssertions(null).hasValue(1234L);
+        new ObservableValueAssertions<>(null).hasValue(1234L);
     }
 }

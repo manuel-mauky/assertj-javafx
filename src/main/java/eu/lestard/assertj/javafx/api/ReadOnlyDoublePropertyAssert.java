@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import org.assertj.core.api.AbstractAssert;
 
@@ -19,7 +19,8 @@ public class ReadOnlyDoublePropertyAssert extends AbstractAssert<ReadOnlyDoubleP
     }
 
     public ReadOnlyDoublePropertyAssert hasValue(double expectedValue) {
-        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
+        new ObservableValueAssertions<>(actual).hasValue(expectedValue);
+
         return this;
     }
 

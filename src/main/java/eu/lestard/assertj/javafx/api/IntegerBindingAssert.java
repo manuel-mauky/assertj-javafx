@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.IntegerBinding;
 import org.assertj.core.api.AbstractAssert;
@@ -21,7 +21,8 @@ public class IntegerBindingAssert extends AbstractAssert<IntegerBindingAssert, I
     }
 
     public IntegerBindingAssert hasValue(int expectedValue) {
-        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
+        new ObservableValueAssertions<>(actual).hasValue(expectedValue);
+
         return this;
     }
 

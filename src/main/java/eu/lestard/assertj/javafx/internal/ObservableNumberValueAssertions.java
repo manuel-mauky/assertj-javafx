@@ -15,18 +15,6 @@ public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNu
         super(actual, ObservableNumberValueAssertions.class);
     }
 
-    public void hasValue(Number expectedValue) {
-        isNotNull();
-
-        if (expectedValue == null) {
-            failWithMessage("The expectedValue may not be null");
-        }
-
-        if (!expectedValue.equals(actual.getValue())) {
-            failWithMessage("Expected actual observable number to has a value of <%s> but was <%s>", expectedValue, actual.getValue());
-        }
-    }
-
     public void hasValue(double expectedValue, Offset offset) {
         isNotNull();
 

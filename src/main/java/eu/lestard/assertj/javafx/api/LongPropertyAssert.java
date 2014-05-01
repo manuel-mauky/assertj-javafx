@@ -1,6 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
-import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.LongProperty;
 import org.assertj.core.api.AbstractAssert;
@@ -21,8 +21,7 @@ public class LongPropertyAssert extends AbstractAssert<LongPropertyAssert, LongP
 
 
     public LongPropertyAssert hasValue(long expectedValue) {
-        new ObservableNumberValueAssertions(actual).hasValue(expectedValue);
-
+        new ObservableValueAssertions<>(actual).hasValue(expectedValue);
         return this;
     }
 

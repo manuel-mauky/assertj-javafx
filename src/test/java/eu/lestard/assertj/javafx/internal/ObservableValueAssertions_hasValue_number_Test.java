@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ObservableNumberValueAssertions_hasValue_number_Test {
+public class ObservableValueAssertions_hasValue_number_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value(){
@@ -14,7 +14,7 @@ public class ObservableNumberValueAssertions_hasValue_number_Test {
 
         Number expected = 10.123;
 
-        new ObservableNumberValueAssertions(actual).hasValue(expected);
+        new ObservableValueAssertions<>(actual).hasValue(expected);
     }
 
     @Test
@@ -22,17 +22,17 @@ public class ObservableNumberValueAssertions_hasValue_number_Test {
         try{
             ObservableNumberValue actual = new SimpleDoubleProperty(10.123);
 
-            new ObservableNumberValueAssertions(actual).hasValue(null);
+            new ObservableValueAssertions<>(actual).hasValue(null);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("expectedValue may not be null");
+            assertThat(error).hasMessageContaining("expected value may not be null");
         }
     }
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
         Number expected = 10.123;
-        new ObservableNumberValueAssertions(null).hasValue(expected);
+        new ObservableValueAssertions<>(null).hasValue(expected);
     }
 
 }
