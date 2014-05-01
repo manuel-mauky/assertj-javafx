@@ -15,28 +15,19 @@ public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNu
         super(actual, ObservableNumberValueAssertions.class);
     }
 
-    public void hasValue(double expectedValue, Offset offset) {
+    public void hasValue(Number expectedValue, Offset offset) {
         isNotNull();
 
         if (offset == null) {
             failWithMessage("The given offset may not be null");
         }
 
-        if (Math.abs(expectedValue - actual.doubleValue()) > offset.value.doubleValue()) {
-            failWithMessage("Expecting:\n\t<%s>\nto be close to:\n\t<%s>\nby less than <%s> but difference was <%s>.", actual.doubleValue(), expectedValue, offset.value.doubleValue(), Math.abs(expectedValue - actual.doubleValue()));
-        }
-    }
-
-
-    public void hasValue(float expectedValue, Offset offset) {
-        isNotNull();
-
-        if (offset == null) {
-            failWithMessage("The given offset may not be null");
-        }
-
-        if (Math.abs(expectedValue - actual.floatValue()) > offset.value.floatValue()) {
-            failWithMessage("Expecting:\n\t<%s>\nto be close to:\n\t<%s>\nby less than <%s> but difference was <%s>.", actual.floatValue(), expectedValue, offset.value.floatValue(), Math.abs(expectedValue - actual.floatValue()));
+        if (Math.abs(expectedValue.floatValue() - actual.floatValue()) > offset.value.doubleValue()) {
+            failWithMessage("Expecting:\n\t<%s>\nto be close to:\n\t<%s>\nby less than <%s> but difference was <%s>.",
+                actual,
+                expectedValue,
+                offset.value,
+                Math.abs(expectedValue.floatValue() - actual.floatValue()));
         }
     }
 }
