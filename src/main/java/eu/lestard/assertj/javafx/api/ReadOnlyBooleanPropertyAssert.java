@@ -18,12 +18,22 @@ public class ReadOnlyBooleanPropertyAssert extends AbstractAssert<ReadOnlyBoolea
         super(actual, ReadOnlyBooleanPropertyAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable boolean has a value of <code>true</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ReadOnlyBooleanPropertyAssert isTrue() {
         new ObservableBooleanValueAssertions(actual).isTrue();
 
         return this;
     }
 
+    /**
+     * Verifies that the actual observable boolean has a value of <code>false</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ReadOnlyBooleanPropertyAssert isFalse() {
         new ObservableBooleanValueAssertions(actual).isFalse();
         return this;

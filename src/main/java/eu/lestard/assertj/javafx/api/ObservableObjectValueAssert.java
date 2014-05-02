@@ -30,13 +30,23 @@ public class ObservableObjectValueAssert<T> extends AbstractAssert<ObservableObj
         return this;
     }
 
-    public ObservableObjectValueAssert<T> hasNotNullValue() {
-        new ObservableValueAssertions<>(actual).hasNotNullValue();
+    /**
+     * Verifies that the actual observable has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObservableObjectValueAssert<T> hasNullValue() {
+        new ObservableValueAssertions<>(actual).hasNullValue();
         return this;
     }
 
-    public ObservableObjectValueAssert<T> hasNullValue() {
-        new ObservableValueAssertions<>(actual).hasNullValue();
+    /**
+     * Verifies that the actual observable has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObservableObjectValueAssert<T> hasNotNullValue() {
+        new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;
     }
 }

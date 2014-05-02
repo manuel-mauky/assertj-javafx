@@ -19,11 +19,21 @@ public class ObservableBooleanValueAssert extends AbstractAssert<ObservableBoole
         super(actual, ObservableBooleanValueAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable boolean has a value of <code>true</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ObservableBooleanValueAssert isTrue() {
         new ObservableBooleanValueAssertions(actual).isTrue();
         return this;
     }
 
+    /**
+     * Verifies that the actual observable boolean has a value of <code>false</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ObservableBooleanValueAssert isFalse() {
         new ObservableBooleanValueAssertions(actual).isFalse();
         return this;

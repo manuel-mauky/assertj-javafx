@@ -20,12 +20,21 @@ public class BooleanPropertyAssert extends AbstractAssert<BooleanPropertyAssert,
         super(actual, BooleanPropertyAssert.class);
     }
 
-
+    /**
+     * Verifies that the actual observable boolean has a value of <code>true</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public BooleanPropertyAssert isTrue() {
         new ObservableBooleanValueAssertions(actual).isTrue();
         return this;
     }
 
+    /**
+     * Verifies that the actual observable boolean has a value of <code>false</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public BooleanPropertyAssert isFalse() {
         new ObservableBooleanValueAssertions(actual).isFalse();
         return this;
@@ -33,6 +42,7 @@ public class BooleanPropertyAssert extends AbstractAssert<BooleanPropertyAssert,
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public BooleanPropertyAssert isBound() {

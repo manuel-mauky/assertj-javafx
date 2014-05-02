@@ -34,6 +34,7 @@ public class StringPropertyAssert extends AbstractAssert<StringPropertyAssert, S
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public StringPropertyAssert isBound() {
@@ -41,11 +42,21 @@ public class StringPropertyAssert extends AbstractAssert<StringPropertyAssert, S
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public StringPropertyAssert hasNullValue() {
         new ObservableValueAssertions<>(actual).hasNullValue();
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public StringPropertyAssert hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;

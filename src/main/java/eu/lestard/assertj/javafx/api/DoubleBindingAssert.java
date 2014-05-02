@@ -31,6 +31,12 @@ public class DoubleBindingAssert extends AbstractAssert<DoubleBindingAssert, Dou
         return this;
     }
 
+    /**
+     * Verifies that the actual Binding is bound and depends on the given Observable value.
+     *
+     * @param observable the observable that is expected to be a binding dependency of the actual binding.
+     * @return {@code this} assertion instance
+     */
     public DoubleBindingAssert dependsOn(Observable observable) {
         new BindingAssert(actual).dependsOn(observable);
         return this;

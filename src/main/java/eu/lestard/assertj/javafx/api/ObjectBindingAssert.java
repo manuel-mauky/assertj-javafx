@@ -1,6 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
+import javafx.beans.Observable;
 import javafx.beans.binding.ObjectBinding;
 import org.assertj.core.api.AbstractAssert;
 
@@ -30,13 +31,34 @@ public class ObjectBindingAssert<T> extends AbstractAssert<ObjectBindingAssert<T
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObjectBindingAssert<T> hasNullValue() {
+        new ObservableValueAssertions<>(actual).hasNullValue();
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ObjectBindingAssert<T> hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;
     }
 
-    public ObjectBindingAssert<T> hasNullValue() {
-        new ObservableValueAssertions<>(actual).hasNullValue();
+    /**
+     * Verifies that the actual Binding is bound and depends on the given Observable value.
+     *
+     * @param observable the observable that is expected to be a binding dependency of the actual binding.
+     * @return {@code this} assertion instance
+     */
+    public ObjectBindingAssert<T> dependsOn(Observable observable) {
+        new BindingAssert(actual).dependsOn(observable);
         return this;
     }
 }

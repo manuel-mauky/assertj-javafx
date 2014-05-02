@@ -33,11 +33,21 @@ public class ReadOnlyStringPropertyAssert extends AbstractAssert<ReadOnlyStringP
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ReadOnlyStringPropertyAssert hasNullValue() {
         new ObservableValueAssertions<>(actual).hasNullValue();
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ReadOnlyStringPropertyAssert hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;

@@ -31,11 +31,22 @@ public class ObservableStringValueAssert extends AbstractAssert<ObservableString
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ObservableStringValueAssert hasNullValue() {
         new ObservableValueAssertions<>(actual).hasNullValue();
         return this;
     }
 
+
+    /**
+     * Verifies that the actual observable has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
     public ObservableStringValueAssert hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;

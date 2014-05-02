@@ -20,8 +20,14 @@ public class BindingAssert extends AbstractAssert<BindingAssert, Binding> {
         super(actual, BindingAssert.class);
     }
 
-    protected BindingAssert dependsOn(Observable value) {
-        new BindingAssertions(actual).dependsOn(value);
+    /**
+     * Verifies that the actual Binding is bound and depends on the given Observable value.
+     *
+     * @param observable the observable that is expected to be a binding dependency of the actual binding.
+     * @return {@code this} assertion instance
+     */
+    protected BindingAssert dependsOn(Observable observable) {
+        new BindingAssertions(actual).dependsOn(observable);
         return this;
     }
 }

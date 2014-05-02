@@ -33,6 +33,7 @@ public class DoublePropertyAssert extends AbstractAssert<DoublePropertyAssert, D
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public DoublePropertyAssert isBound() {

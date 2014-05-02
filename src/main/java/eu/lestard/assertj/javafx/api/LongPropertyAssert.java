@@ -32,6 +32,7 @@ public class LongPropertyAssert extends AbstractAssert<LongPropertyAssert, LongP
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public LongPropertyAssert isBound() {

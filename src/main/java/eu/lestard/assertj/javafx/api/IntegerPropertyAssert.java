@@ -33,6 +33,7 @@ public class IntegerPropertyAssert extends AbstractAssert<IntegerPropertyAssert,
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public IntegerPropertyAssert isBound() {

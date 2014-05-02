@@ -33,6 +33,7 @@ public class ObjectPropertyAssert<T> extends AbstractAssert<ObjectPropertyAssert
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public ObjectPropertyAssert isBound() {
@@ -40,13 +41,25 @@ public class ObjectPropertyAssert<T> extends AbstractAssert<ObjectPropertyAssert
         return this;
     }
 
-    public ObjectPropertyAssert<T> hasNotNullValue() {
-        new ObservableValueAssertions<>(actual).hasNotNullValue();
+
+    /**
+     * Verifies that the actual observable has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObjectPropertyAssert<T> hasNullValue() {
+        new ObservableValueAssertions<>(actual).hasNullValue();
         return this;
     }
 
-    public ObjectPropertyAssert<T> hasNullValue() {
-        new ObservableValueAssertions<>(actual).hasNullValue();
+
+    /**
+     * Verifies that the actual observable has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObjectPropertyAssert<T> hasNotNullValue() {
+        new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;
     }
 }

@@ -34,6 +34,7 @@ public class FloatPropertyAssert extends AbstractAssert<FloatPropertyAssert, Flo
 
     /**
      * Verifies that the actual observable is bound by another observable.
+     *
      * @return {@code this} assertion instance.
      */
     public FloatPropertyAssert isBound() {
