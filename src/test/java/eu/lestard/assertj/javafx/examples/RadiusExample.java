@@ -1,11 +1,4 @@
-# AssertJ Assertions for JavaFX
-
-The goal of this project is to create AssertJ assertions for JavaFX (8).
-
-
-## Example
-
-```java
+package eu.lestard.assertj.javafx.examples;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.DoubleBinding;
@@ -33,12 +26,3 @@ public class RadiusExample {
         assertThat(circleArea).hasValue(452.4, offset(0.1));
     }
 }
-
-```
-
-
-
-## Links
-[JavaDoc](https://lestard.github.io/assertj-javafx/)
-
-
