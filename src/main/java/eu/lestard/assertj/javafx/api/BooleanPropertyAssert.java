@@ -31,6 +31,10 @@ public class BooleanPropertyAssert extends AbstractAssert<BooleanPropertyAssert,
         return this;
     }
 
+    /**
+     * Verifies that the actual observable is bound by another observable.
+     * @return {@code this} assertion instance.
+     */
     public BooleanPropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
         return this;

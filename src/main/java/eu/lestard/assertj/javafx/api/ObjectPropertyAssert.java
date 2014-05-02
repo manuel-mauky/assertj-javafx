@@ -1,6 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
+import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.ObjectProperty;
 import org.assertj.core.api.AbstractAssert;
 
@@ -27,6 +28,15 @@ public class ObjectPropertyAssert<T> extends AbstractAssert<ObjectPropertyAssert
      */
     public ObjectPropertyAssert<T> hasValue(T expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable is bound by another observable.
+     * @return {@code this} assertion instance.
+     */
+    public ObjectPropertyAssert isBound() {
+        new PropertyAssertions(actual).isBound();
         return this;
     }
 

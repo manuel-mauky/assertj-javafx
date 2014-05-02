@@ -32,6 +32,10 @@ public class FloatPropertyAssert extends AbstractAssert<FloatPropertyAssert, Flo
         return this;
     }
 
+    /**
+     * Verifies that the actual observable is bound by another observable.
+     * @return {@code this} assertion instance.
+     */
     public FloatPropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
 
