@@ -1,9 +1,11 @@
 package eu.lestard.assertj.javafx.api;
 
+import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.DoubleProperty;
 import org.assertj.core.api.AbstractAssert;
+import org.assertj.core.data.Offset;
 
 /**
  * Assertion methods for {@link DoubleProperty}s.
@@ -27,6 +29,22 @@ public class DoublePropertyAssert extends AbstractAssert<DoublePropertyAssert, D
      */
     public DoublePropertyAssert hasValue(double expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
+
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable number has a value that is close to the given one by less then the given offset.
+     *
+     * @param expectedValue the given value to compare the actual observables value to.
+     * @param offset the given positive offset.
+     * @return  {@code this} assertion object.
+     *
+     * @throws java.lang.NullPointerException if the given offset is <code>null</code>.
+     * @throws java.lang.AssertionError if the actual observables value is not equal to the expected one.
+     */
+    public DoublePropertyAssert hasValue(Double expectedValue, Offset offset){
+        new ObservableNumberValueAssertions(actual).hasValue(expectedValue, offset);
 
         return this;
     }

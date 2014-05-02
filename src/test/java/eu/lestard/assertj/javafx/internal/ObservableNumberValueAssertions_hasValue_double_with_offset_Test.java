@@ -39,7 +39,7 @@ public class ObservableNumberValueAssertions_hasValue_double_with_offset_Test {
             new ObservableNumberValueAssertions(actual).hasValue(10.123, null);
 
             fail("Should throw an AssertionError");
-        }catch(AssertionError error){
+        }catch(NullPointerException error){
             assertThat(error).hasMessageContaining("offset may not be null");
         }
     }

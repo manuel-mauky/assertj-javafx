@@ -19,7 +19,7 @@ public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNu
         isNotNull();
 
         if (offset == null) {
-            failWithMessage("The given offset may not be null");
+            throw new NullPointerException("The given offset may not be null");
         }
 
         if (Math.abs(expectedValue.floatValue() - actual.floatValue()) > offset.value.doubleValue()) {
