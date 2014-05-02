@@ -19,6 +19,12 @@ public class ReadOnlyIntegerPropertyAssert extends AbstractAssert<ReadOnlyIntege
         super(actual, ReadOnlyIntegerPropertyAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public ReadOnlyIntegerPropertyAssert hasValue(int expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
 

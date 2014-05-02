@@ -20,6 +20,12 @@ public class DoubleBindingAssert extends AbstractAssert<DoubleBindingAssert, Dou
         super(actual, DoubleBindingAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public DoubleBindingAssert hasValue(Double expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
         return this;

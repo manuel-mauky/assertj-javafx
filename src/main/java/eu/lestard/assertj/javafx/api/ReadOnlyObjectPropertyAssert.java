@@ -19,6 +19,12 @@ public class ReadOnlyObjectPropertyAssert<T> extends AbstractAssert<ReadOnlyObje
         super(actual, ReadOnlyObjectPropertyAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public ReadOnlyObjectPropertyAssert<T> hasValue(T expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
         return this;

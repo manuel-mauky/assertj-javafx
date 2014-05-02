@@ -19,6 +19,12 @@ public class ObservableObjectValueAssert<T> extends AbstractAssert<ObservableObj
         super(actual, ObservableObjectValueAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public ObservableObjectValueAssert<T> hasValue(T expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
         return this;

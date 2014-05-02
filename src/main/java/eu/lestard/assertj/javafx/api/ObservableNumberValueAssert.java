@@ -19,6 +19,12 @@ public class ObservableNumberValueAssert extends AbstractAssert<ObservableNumber
         super(actual, ObservableNumberValueAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public ObservableNumberValueAssert hasValue(Number expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
 

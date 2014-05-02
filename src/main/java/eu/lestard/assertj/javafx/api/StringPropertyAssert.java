@@ -21,11 +21,21 @@ public class StringPropertyAssert extends AbstractAssert<StringPropertyAssert, S
         super(actual, StringPropertyAssert.class);
     }
 
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public StringPropertyAssert hasValue(String expectedValue) {
         new ObservableStringValueAssertions(actual).hasValue(expectedValue);
         return this;
     }
 
+    /**
+     * Verifies that the actual observable is bound by another observable.
+     * @return {@code this} assertion instance.
+     */
     public StringPropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
         return this;

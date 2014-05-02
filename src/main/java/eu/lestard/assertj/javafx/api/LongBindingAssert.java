@@ -20,7 +20,12 @@ public class LongBindingAssert extends AbstractAssert<LongBindingAssert, LongBin
         super(actual, LongBindingAssert.class);
     }
 
-
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public LongBindingAssert hasValue(long expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
         return this;

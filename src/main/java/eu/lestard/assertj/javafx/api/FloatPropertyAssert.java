@@ -20,7 +20,12 @@ public class FloatPropertyAssert extends AbstractAssert<FloatPropertyAssert, Flo
         super(actual, FloatPropertyAssert.class);
     }
 
-
+    /**
+     * Verifies that the actual observable has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual observables current value.
+     * @return {@code this} assertion instance.
+     */
     public FloatPropertyAssert hasValue(float expectedValue) {
         new ObservableValueAssertions<>(actual).hasValue(expectedValue);
 
