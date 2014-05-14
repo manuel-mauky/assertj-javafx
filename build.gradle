@@ -31,9 +31,6 @@ allprojects {
     }
 }
 
-
-
-
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = "javadoc"
     from "build/docs/javadoc"
@@ -52,44 +49,81 @@ artifacts {
     archives sourcesJar
 }
 
-signing {
-    sign configurations.archives
+def sonatypeRepositoryUrl
+
+def isDevBuild
+def isSnapshotBuild
+def isReleaseBuild
+
+
+
+// release with 'gradle uploadArchives -Prelease'
+// release snapshot with 'gradle uploadArchives -Psnapshot'
+if (hasProperty("release")) {
+    println "release"
+    isReleaseBuild = true
+    sonatypeRepositoryUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+} else if (hasProperty("snapshot")) {
+    println "snapshot"
+    isSnapshotBuild = true
+    version += "-SNAPSHOT"
+    sonatypeRepositoryUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+} else {
+    println "dev build"
+    isDevBuild = true
+}
+
+//********* artifact signing *********
+if (isReleaseBuild) {
+    signing {
+        sign configurations.archives
+    }
+} else {
+    task signArchives {
+        // do nothing
+    }
 }
 
 
 uploadArchives {
     repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: sonatypeUsername, password: sonatypePassword)
-            }
-
-            pom.project {
-                name = "assertj-javafx"
-                packaging = "jar"
-                description "AssertJ-JavaFX is a package of assertj assertions for JavaFX"
-                url "https://github.com/lestard/assertj-javafx"
-
-                scm {
-                    url "scm:git@github.com:lestard/assertj-javafx.git"
-                    connection "scm:git@github.com:lestard/assertj-javafx.git"
-                    developerConnection "scm:git@github.com:lestard/assertj-javafx.git"
+        if (isDevBuild) {
+            mavenLocal()
+        } else {
+            mavenDeployer {
+                if(isReleaseBuild) {
+                    beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
                 }
 
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
+                repository(url: sonatypeRepositoryUrl) {
+                    authentication(userName: sonatypeUsername, password: sonatypePassword)
+                }
+
+                pom.project {
+                    name = "assertj-javafx"
+                    packaging = "jar"
+                    description "AssertJ-JavaFX is a package of assertj assertions for JavaFX"
+                    url "https://github.com/lestard/assertj-javafx"
+
+                    scm {
+                        url "scm:git@github.com:lestard/assertj-javafx.git"
+                        connection "scm:git@github.com:lestard/assertj-javafx.git"
+                        developerConnection "scm:git@github.com:lestard/assertj-javafx.git"
                     }
-                }
 
-                developers {
-                    developer {
-                        id "manuel.mauky"
-                        name "Manuel Mauky"
+                    licenses {
+                        license {
+                            name 'The Apache Software License, Version 2.0'
+                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                            distribution 'repo'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id "manuel.mauky"
+                            name "Manuel Mauky"
+                        }
                     }
                 }
             }
@@ -98,6 +132,7 @@ uploadArchives {
 }
 
 import org.gradle.plugins.signing.Sign
+
 gradle.taskGraph.whenReady { taskGraph ->
     if (taskGraph.allTasks.any { it instanceof Sign }) {
         // Use Java 6's console to read from the console (no good for a CI environment)
