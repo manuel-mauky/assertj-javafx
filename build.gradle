@@ -1,12 +1,37 @@
 apply plugin: "java"
 apply plugin: "maven"
+apply plugin: "signing"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 group = "eu.lestard"
 version = "0.1.0"
-ext.packaging = "jar"
+
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+
+dependencies {
+    compile "org.assertj:assertj-core:1.6.0"
+
+    // testing
+    testCompile "junit:junit:4.11"
+}
+
+allprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked"
+        }
+    }
+}
+
+
 
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
@@ -27,24 +52,63 @@ artifacts {
     archives sourcesJar
 }
 
-
-repositories {
-    mavenLocal()
-	mavenCentral()
+signing {
+    sign configurations.archives
 }
 
-allprojects {
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xlint:unchecked"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+
+            pom.project {
+                name = "assertj-javafx"
+                packaging = "jar"
+                description "AssertJ-JavaFX is a package of assertj assertions for JavaFX"
+                url "https://github.com/lestard/assertj-javafx"
+
+                scm {
+                    url "scm:git@github.com:lestard/assertj-javafx.git"
+                    connection "scm:git@github.com:lestard/assertj-javafx.git"
+                    developerConnection "scm:git@github.com:lestard/assertj-javafx.git"
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id "manuel.mauky"
+                        name "Manuel Mauky"
+                    }
+                }
+            }
         }
     }
 }
 
+import org.gradle.plugins.signing.Sign
+gradle.taskGraph.whenReady { taskGraph ->
+    if (taskGraph.allTasks.any { it instanceof Sign }) {
+        // Use Java 6's console to read from the console (no good for a CI environment)
+        Console console = System.console()
+        console.printf "\n\nWe have to sign some things in this build.\n\nPlease enter your signing details.\n\n"
 
-dependencies {
-    compile "org.assertj:assertj-core:1.6.0"
+        def password = console.readPassword("PGP Private Key Password: ")
 
-    // testing
-    testCompile "junit:junit:4.11"
+        allprojects { ext."signing.password" = password }
+
+        console.printf "\nThanks.\n\n"
+    }
 }
+
