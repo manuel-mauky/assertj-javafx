@@ -36,6 +36,22 @@ public class RadiusExample {
 
 ```
 
+## How to Use
+
+Gradle: 
+```groovy
+testCompile 'eu.lestard:assertj-javafx:0.1.0'
+```
+
+Maven:
+```xml
+<dependency>
+    <groupId>eu.lestard</groupId>
+    <artifactId>assertj-javafx</artifactId>
+    <version>0.1.0</version>
+    <scope>test</scope>
+</dependency>
+```
 
 
 ## Links
