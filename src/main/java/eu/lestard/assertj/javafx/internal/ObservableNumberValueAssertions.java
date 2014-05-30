@@ -22,7 +22,7 @@ public class ObservableNumberValueAssertions extends AbstractAssert<ObservableNu
             throw new NullPointerException("The given offset may not be null");
         }
 
-        if (Math.abs(expectedValue.floatValue() - actual.floatValue()) > offset.value.doubleValue()) {
+        if (Math.abs(expectedValue.doubleValue() - actual.doubleValue()) > offset.value.doubleValue()) {
             failWithMessage("Expecting:\n\t<%s>\nto be close to:\n\t<%s>\nby less than <%s> but difference was <%s>.",
                 actual,
                 expectedValue,

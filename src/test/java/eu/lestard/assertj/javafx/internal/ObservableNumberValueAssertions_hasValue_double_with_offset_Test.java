@@ -1,7 +1,7 @@
 package eu.lestard.assertj.javafx.internal;
 
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.value.ObservableDoubleValue;
+import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -10,15 +10,15 @@ public class ObservableNumberValueAssertions_hasValue_double_with_offset_Test {
 
     @Test
     public void should_pass_if_actual_has_given_value_with_offset(){
-        ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
+        ObservableNumberValue actual = new SimpleDoubleProperty(18509.64945984806);
 
-        new ObservableNumberValueAssertions(actual).hasValue(10.12, offset(0.01));
+        new ObservableNumberValueAssertions(actual).hasValue(18509.6494, offset(0.001));
     }
 
     @Test
     public void should_fail_if_actual_has_wrong_value(){
         try{
-            ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
+            ObservableNumberValue actual = new SimpleDoubleProperty(10.123);
 
             new ObservableNumberValueAssertions(actual).hasValue(10.12, offset(0.001));
             fail("Should throw an AssertionError");
@@ -35,7 +35,7 @@ public class ObservableNumberValueAssertions_hasValue_double_with_offset_Test {
     @Test
     public void should_fail_if_offset_is_null(){
         try{
-            ObservableDoubleValue actual = new SimpleDoubleProperty(10.123);
+            ObservableNumberValue actual = new SimpleDoubleProperty(10.123);
             new ObservableNumberValueAssertions(actual).hasValue(10.123, null);
 
             fail("Should throw an AssertionError");
