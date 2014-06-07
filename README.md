@@ -40,7 +40,7 @@ public class RadiusExample {
 
 Gradle: 
 ```groovy
-testCompile 'eu.lestard:assertj-javafx:0.1.0'
+testCompile 'eu.lestard:assertj-javafx:0.1.1'
 ```
 
 Maven:
@@ -48,7 +48,7 @@ Maven:
 <dependency>
     <groupId>eu.lestard</groupId>
     <artifactId>assertj-javafx</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <scope>test</scope>
 </dependency>
 ```
