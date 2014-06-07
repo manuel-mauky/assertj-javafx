@@ -15,8 +15,8 @@ import org.assertj.core.api.AbstractAssert;
  *
  * @author manuel mauky
  */
-public class BindingAssert extends AbstractAssert<BindingAssert, Binding> {
-    protected BindingAssert(Binding actual) {
+public class BindingAssert<T> extends AbstractAssert<BindingAssert<T>, Binding<T>> {
+    protected BindingAssert(Binding<T> actual) {
         super(actual, BindingAssert.class);
     }
 
@@ -26,8 +26,40 @@ public class BindingAssert extends AbstractAssert<BindingAssert, Binding> {
      * @param observable the observable that is expected to be a binding dependency of the actual binding.
      * @return {@code this} assertion instance
      */
-    protected BindingAssert dependsOn(Observable observable) {
-        new BindingAssertions(actual).dependsOn(observable);
+    public BindingAssert<T> dependsOn(Observable observable) {
+        new BindingAssertions<>(actual).dependsOn(observable);
+        return this;
+    }
+
+    /**
+     * Verifies that the actual binding has the expected value set.
+     *
+     * @param expectedValue the value to compare to the actual bindings current value.
+     * @return {@code this} assertion instance.
+     */
+    public BindingAssert<T> hasValue(T expectedValue){
+        new BindingAssertions<>(actual).hasValue(expectedValue);
+        return this;
+    }
+
+    /**
+     * Verifies that the actual binding has a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public BindingAssert<T> hasNullValue(){
+        new BindingAssertions<>(actual).hasNullValue();
+        return this;
+    }
+
+
+    /**
+     * Verifies that the actual binding has NOT a value of <code>null</code>.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public BindingAssert<T> hasNotNullValue(){
+        new BindingAssertions<>(actual).hasNotNullValue();
         return this;
     }
 }

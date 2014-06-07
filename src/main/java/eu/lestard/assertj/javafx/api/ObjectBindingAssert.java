@@ -58,7 +58,7 @@ public class ObjectBindingAssert<T> extends AbstractAssert<ObjectBindingAssert<T
      * @return {@code this} assertion instance
      */
     public ObjectBindingAssert<T> dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 }

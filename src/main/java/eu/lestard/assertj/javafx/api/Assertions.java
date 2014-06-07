@@ -22,11 +22,12 @@ public class Assertions {
     /**
      * Creates a new instance of <code>{@link BindingAssert}</code>.
      *
+     * @param <T>    the generic type of the binding.
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static BindingAssert assertThat(Binding actual) {
-        return new BindingAssert(actual);
+    public static <T> BindingAssert assertThat(Binding<T> actual) {
+        return new BindingAssert<T>(actual);
     }
 
     /**

@@ -39,7 +39,7 @@ public class IntegerBindingAssert extends AbstractAssert<IntegerBindingAssert, I
      * @return {@code this} assertion instance
      */
     public IntegerBindingAssert dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 }

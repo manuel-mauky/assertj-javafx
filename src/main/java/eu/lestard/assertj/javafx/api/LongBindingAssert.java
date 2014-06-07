@@ -38,7 +38,7 @@ public class LongBindingAssert extends AbstractAssert<LongBindingAssert, LongBin
      * @return {@code this} assertion instance
      */
     public LongBindingAssert dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 }

@@ -46,7 +46,7 @@ public class BooleanBindingAssert extends AbstractAssert<BooleanBindingAssert, B
      * @return {@code this} assertion instance
      */
     public BooleanBindingAssert dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 }

@@ -40,7 +40,7 @@ public class StringBindingAssert extends AbstractAssert<StringBindingAssert, Str
      * @return {@code this} assertion instance
      */
     public StringBindingAssert dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 

@@ -56,7 +56,7 @@ public class DoubleBindingAssert extends AbstractAssert<DoubleBindingAssert, Dou
      * @return {@code this} assertion instance
      */
     public DoubleBindingAssert dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 }

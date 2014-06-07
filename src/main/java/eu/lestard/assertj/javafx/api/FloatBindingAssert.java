@@ -57,7 +57,7 @@ public class FloatBindingAssert extends AbstractAssert<FloatBindingAssert, Float
      * @return {@code this} assertion instance
      */
     public FloatBindingAssert dependsOn(Observable observable) {
-        new BindingAssert(actual).dependsOn(observable);
+        new BindingAssert<>(actual).dependsOn(observable);
         return this;
     }
 

@@ -15,9 +15,9 @@ public class BindingAssertions_dependsOn_Test {
     public void should_pass_if_actual_depends_on_given_value() {
         DoubleProperty dependency = new SimpleDoubleProperty(5);
 
-        Binding actual = Bindings.add(dependency, 10);
+        Binding<Number> actual = Bindings.add(dependency, 10);
 
-        new BindingAssertions(actual).dependsOn(dependency);
+        new BindingAssertions<>(actual).dependsOn(dependency);
     }
 
     @Test
@@ -26,9 +26,9 @@ public class BindingAssertions_dependsOn_Test {
             DoubleProperty noDependency = new SimpleDoubleProperty(10);
             DoubleProperty dependency = new SimpleDoubleProperty(10);
 
-            Binding actual = Bindings.add(dependency, 10);
+            Binding<Number> actual = Bindings.add(dependency, 10);
 
-            new BindingAssertions(actual).dependsOn(noDependency);
+            new BindingAssertions<>(actual).dependsOn(noDependency);
             fail("Should throw an AssertionError");
         } catch (AssertionError error) {
             assertThat(error).hasMessageContaining("to depend on");
@@ -38,13 +38,13 @@ public class BindingAssertions_dependsOn_Test {
 
     @Test(expected = AssertionError.class)
     public void should_fail_if_actual_is_null(){
-        new BindingAssertions(null).dependsOn(new SimpleDoubleProperty(10));
+        new BindingAssertions<>(null).dependsOn(new SimpleDoubleProperty(10));
     }
 
     @Test(expected = NullPointerException.class)
     public void should_fail_if_given_value_is_null(){
-        Binding actual = Bindings.add(new SimpleDoubleProperty(10), 10);
-        new BindingAssertions(actual).dependsOn(null);
+        Binding<Number> actual = Bindings.add(new SimpleDoubleProperty(10), 10);
+        new BindingAssertions<>(actual).dependsOn(null);
     }
 
 }
