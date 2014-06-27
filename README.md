@@ -55,6 +55,6 @@ Maven:
 
 
 ## Links
-[JavaDoc](https://lestard.github.io/assertj-javafx/)
+[JavaDoc](https://lestard.github.io/assertj-javafx/javadoc/0.1.2/)
 
 
