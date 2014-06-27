@@ -1,6 +1,9 @@
 apply plugin: "java"
 apply plugin: "maven"
 apply plugin: "signing"
+apply plugin: 'sonar-runner'
+apply plugin: "jacoco"
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -10,9 +13,14 @@ version = "0.1.2"
 
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
+
+javadoc{
+    options.addStringOption("link","http://download.java.net/jdk8/jfxdocs/")
+    exclude "**/internal/**"
+}
+
 
 
 dependencies {
@@ -29,6 +37,23 @@ allprojects {
         }
     }
 }
+
+
+
+
+jacoco {
+    toolVersion = "0.7.0.201403182114"
+}
+
+sonarRunner {
+    sonarProperties {
+        properties["sonar.libraries"] += System.env.'JAVA_HOME' + "/jre/lib/ext/jfxrt.jar"
+        property 'sonar.jacoco.reportPath', "${buildDir}/jacoco/test.exec"
+        property 'sonar.junit.reportsPath', "${buildDir}/test-results"
+    }
+}
+
+
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = "javadoc"
