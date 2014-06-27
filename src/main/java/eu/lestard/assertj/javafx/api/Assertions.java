@@ -20,6 +20,17 @@ public class Assertions {
 
 
     /**
+     * Creates a new instance of <code>{@link NumberBindingAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    public static NumberBindingAssert assertThat(NumberBinding actual){
+        return new NumberBindingAssert(actual);
+    }
+
+
+    /**
      * Creates a new instance of <code>{@link BindingAssert}</code>.
      *
      * @param <T>    the generic type of the binding.
