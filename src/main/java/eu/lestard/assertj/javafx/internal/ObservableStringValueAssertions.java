@@ -3,6 +3,8 @@ package eu.lestard.assertj.javafx.internal;
 import javafx.beans.value.ObservableStringValue;
 import org.assertj.core.api.AbstractAssert;
 
+import static eu.lestard.assertj.javafx.internal.ErrorMessages.EXPECTED_NOT_NULL;
+
 public class ObservableStringValueAssertions extends AbstractAssert<ObservableStringValueAssertions, ObservableStringValue> {
     public ObservableStringValueAssertions(ObservableStringValue actual) {
         super(actual, ObservableStringValueAssertions.class);
@@ -13,7 +15,7 @@ public class ObservableStringValueAssertions extends AbstractAssert<ObservableSt
         isNotNull();
 
         if (expectedValue == null) {
-            failWithMessage("The expected value may not be null");
+            failWithMessage(EXPECTED_NOT_NULL);
         }
 
         if (!expectedValue.equals(actual.get())) {

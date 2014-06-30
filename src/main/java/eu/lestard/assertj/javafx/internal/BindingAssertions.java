@@ -3,6 +3,7 @@ package eu.lestard.assertj.javafx.internal;
 import javafx.beans.Observable;
 import javafx.beans.binding.Binding;
 import org.assertj.core.api.AbstractAssert;
+import static eu.lestard.assertj.javafx.internal.ErrorMessages.*;
 
 public class BindingAssertions<T> extends AbstractAssert<BindingAssertions<T>, Binding<T>> {
 
@@ -26,7 +27,7 @@ public class BindingAssertions<T> extends AbstractAssert<BindingAssertions<T>, B
         isNotNull();
 
         if(expectedValue == null){
-            failWithMessage("The expected value may not be null");
+            failWithMessage(EXPECTED_NOT_NULL);
         }
 
         if(!expectedValue.equals(actual.getValue())){
