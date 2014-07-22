@@ -1,5 +1,8 @@
 # AssertJ Assertions for JavaFX
 
+[![Build Status](https://travis-ci.org/lestard/assertj-javafx.svg?branch=master)](https://travis-ci.org/lestard/assertj-javafx)
+
+
 The goal of this project is to create AssertJ assertions for JavaFX (8).
 
 
