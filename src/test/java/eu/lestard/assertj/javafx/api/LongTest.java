@@ -1,5 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
+import javafx.beans.binding.Binding;
+import javafx.beans.binding.Bindings;
 import javafx.beans.binding.LongBinding;
 import javafx.beans.binding.LongExpression;
 import javafx.beans.property.LongProperty;
@@ -42,6 +44,13 @@ public class LongTest {
         final LongBinding actual = value.add(20l);
 
         assertThat(actual).hasValue(30l);
+    }
+
+    @Test
+    public void testGenericBinding(){
+        Binding<Long> actual = Bindings.createObjectBinding(() -> 20l);
+
+        assertThat(actual).hasValue(20l);
     }
 
     @Test

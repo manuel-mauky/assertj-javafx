@@ -37,7 +37,7 @@ public class Assertions {
      * @param actual the actual value.
      * @return the created assertion object.
      */
-    public static <T> BindingAssert assertThat(Binding<T> actual) {
+    public static <T> BindingAssert<T> assertThat(Binding<T> actual) {
         return new BindingAssert<T>(actual);
     }
 

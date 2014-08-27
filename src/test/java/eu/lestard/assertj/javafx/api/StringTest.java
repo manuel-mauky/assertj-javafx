@@ -1,5 +1,6 @@
 package eu.lestard.assertj.javafx.api;
 
+import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.binding.StringExpression;
@@ -41,6 +42,14 @@ public class StringTest {
         final StringBinding actual = property.asString();
 
         assertThat(actual).hasValue("12");
+    }
+
+
+    @Test
+    public void testGenericBinding(){
+        Binding<String> actual = Bindings.createObjectBinding(()-> "test");
+
+        assertThat(actual).hasValue("test");
     }
 
     @Test

@@ -1,6 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.TestPerson;
+import javafx.beans.binding.Binding;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.binding.ObjectExpression;
@@ -48,6 +49,14 @@ public class ObjectTest {
     @Test
     public void testObjectBinding(){
         ObjectBinding<TestPerson> actual = Bindings.createObjectBinding(()-> person);
+
+        assertThat(actual).hasValue(person);
+    }
+
+
+    @Test
+    public void testGenericBinding(){
+        Binding<TestPerson> actual = Bindings.createObjectBinding(()->person);
 
         assertThat(actual).hasValue(person);
     }

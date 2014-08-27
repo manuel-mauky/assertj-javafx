@@ -1,5 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
+import javafx.beans.binding.Binding;
+import javafx.beans.binding.Bindings;
 import javafx.beans.binding.FloatBinding;
 import javafx.beans.binding.FloatExpression;
 import javafx.beans.property.FloatProperty;
@@ -42,6 +44,13 @@ public class FloatTest {
         final FloatBinding actual = value.add(20);
 
         assertThat(actual).hasValue(30f);
+    }
+
+    @Test
+    public void testGenericBinding(){
+        Binding<Float> actual = Bindings.createObjectBinding(() -> 20f);
+
+        assertThat(actual).hasValue(20f);
     }
 
     @Test

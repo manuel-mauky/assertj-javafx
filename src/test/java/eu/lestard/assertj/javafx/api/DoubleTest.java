@@ -1,5 +1,7 @@
 package eu.lestard.assertj.javafx.api;
 
+import javafx.beans.binding.Binding;
+import javafx.beans.binding.Bindings;
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.binding.DoubleExpression;
 import javafx.beans.property.DoubleProperty;
@@ -43,6 +45,13 @@ public class DoubleTest {
         final DoubleBinding actual = value.add(20.2);
 
         assertThat(actual).hasValue(30.4);
+    }
+
+    @Test
+    public void testGenericBinding(){
+        Binding<Double> actual = Bindings.createObjectBinding(()->20.2);
+
+        assertThat(actual).hasValue(20.2);
     }
 
     @Test

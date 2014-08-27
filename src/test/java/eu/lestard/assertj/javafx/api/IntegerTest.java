@@ -1,6 +1,8 @@
 package eu.lestard.assertj.javafx.api;
 
 
+import javafx.beans.binding.Binding;
+import javafx.beans.binding.Bindings;
 import javafx.beans.binding.IntegerBinding;
 import javafx.beans.binding.IntegerExpression;
 import javafx.beans.property.IntegerProperty;
@@ -44,6 +46,13 @@ public class IntegerTest {
         final IntegerBinding actual = value.add(20);
 
         assertThat(actual).hasValue(30);
+    }
+
+    @Test
+    public void testGenericBinding(){
+        Binding<Integer> actual = Bindings.createObjectBinding(() -> 20);
+
+        assertThat(actual).hasValue(20);
     }
 
     @Test
