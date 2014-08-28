@@ -24,18 +24,24 @@ public class IntegerTest {
     public void testSimpleIntegerProperty() {
         SimpleIntegerProperty actual = new SimpleIntegerProperty(1);
         assertThat(actual).hasValue(1);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testIntegerProperty() {
         IntegerProperty actual = new SimpleIntegerProperty(10);
         assertThat(actual).hasValue(10);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyIntegerProperty(){
         ReadOnlyIntegerProperty actual = new SimpleIntegerProperty(30);
         assertThat(actual).hasValue(30);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -46,6 +52,8 @@ public class IntegerTest {
         final IntegerBinding actual = value.add(20);
 
         assertThat(actual).hasValue(30);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -53,6 +61,8 @@ public class IntegerTest {
         Binding<Integer> actual = Bindings.createObjectBinding(() -> 20);
 
         assertThat(actual).hasValue(20);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -60,6 +70,8 @@ public class IntegerTest {
         ObservableIntegerValue actual = new SimpleIntegerProperty(10);
 
         assertThat(actual).hasValue(10);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -67,6 +79,8 @@ public class IntegerTest {
         ObservableNumberValue actual = new SimpleIntegerProperty(10);
 
         assertThat(actual).hasValue(10);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -74,6 +88,8 @@ public class IntegerTest {
         final IntegerExpression actual = IntegerExpression.integerExpression(new SimpleIntegerProperty(12));
 
         assertThat(actual).hasValue(12);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 }

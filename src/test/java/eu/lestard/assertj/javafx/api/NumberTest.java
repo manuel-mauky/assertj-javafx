@@ -5,6 +5,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableNumberValue;
 import org.junit.Test;
 
 import static eu.lestard.assertj.javafx.api.Assertions.*;
@@ -27,6 +28,11 @@ public class NumberTest {
         assertThat(binding).hasValue(30);
 
         assertThat(binding).dependsOn(valueA);
+
+        ObservableNumberValue expectedValueObservable = new SimpleIntegerProperty(30);
+
+        assertThat(binding).hasSameValue(expectedValueObservable);
+
     }
 
     @Test
@@ -38,5 +44,6 @@ public class NumberTest {
         final NumberBinding binding = valueA.add(valueB);
 
         assertThat(binding).hasValue(0.3, offset(0.001));
+
     }
 }

@@ -3,6 +3,7 @@ package eu.lestard.assertj.javafx.api;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ObservableObjectValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -60,6 +61,18 @@ public class ObjectPropertyAssert<T> extends AbstractAssert<ObjectPropertyAssert
      */
     public ObjectPropertyAssert<T> hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObjectPropertyAssert<T> hasSameValue(ObservableObjectValue<T> expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

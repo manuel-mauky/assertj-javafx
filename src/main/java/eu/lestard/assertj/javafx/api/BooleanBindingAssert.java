@@ -1,8 +1,10 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.BooleanBinding;
+import javafx.beans.value.ObservableBooleanValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -47,6 +49,18 @@ public class BooleanBindingAssert extends AbstractAssert<BooleanBindingAssert, B
      */
     public BooleanBindingAssert dependsOn(Observable observable) {
         new BindingAssert<>(actual).dependsOn(observable);
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public BooleanBindingAssert hasSameValue(ObservableBooleanValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

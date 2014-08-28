@@ -4,6 +4,7 @@ import eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.StringBinding;
+import javafx.beans.value.ObservableStringValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -61,6 +62,19 @@ public class StringBindingAssert extends AbstractAssert<StringBindingAssert, Str
      */
     public StringBindingAssert hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
+        return this;
+    }
+
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public StringBindingAssert hasSameValue(ObservableStringValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

@@ -51,4 +51,17 @@ public class ObservableStringValueAssert extends AbstractAssert<ObservableString
         new ObservableValueAssertions<>(actual).hasNotNullValue();
         return this;
     }
+
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObservableStringValueAssert hasSameValue(ObservableStringValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
+        return this;
+    }
 }

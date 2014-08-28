@@ -4,6 +4,7 @@ import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.value.ObservableNumberValue;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.data.Offset;
 
@@ -57,6 +58,18 @@ public class DoublePropertyAssert extends AbstractAssert<DoublePropertyAssert, D
     public DoublePropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
 
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public DoublePropertyAssert hasSameValue(ObservableNumberValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

@@ -23,18 +23,24 @@ public class DoubleTest {
     public void testSimpleDoubleProperty() {
         SimpleDoubleProperty actual = new SimpleDoubleProperty(1.2);
         assertThat(actual).hasValue(1.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testDoubleProperty() {
         DoubleProperty actual = new SimpleDoubleProperty(10.2);
         assertThat(actual).hasValue(10.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyDoubleProperty(){
         ReadOnlyDoubleProperty actual = new SimpleDoubleProperty(30.2);
         assertThat(actual).hasValue(30.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -45,6 +51,8 @@ public class DoubleTest {
         final DoubleBinding actual = value.add(20.2);
 
         assertThat(actual).hasValue(30.4);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -52,6 +60,8 @@ public class DoubleTest {
         Binding<Double> actual = Bindings.createObjectBinding(()->20.2);
 
         assertThat(actual).hasValue(20.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -59,6 +69,8 @@ public class DoubleTest {
         ObservableDoubleValue actual = new SimpleDoubleProperty(10.2);
 
         assertThat(actual).hasValue(10.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -66,6 +78,8 @@ public class DoubleTest {
         ObservableNumberValue actual = new SimpleDoubleProperty(10.2);
 
         assertThat(actual).hasValue(10.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -73,5 +87,8 @@ public class DoubleTest {
         final DoubleExpression actual = DoubleExpression.doubleExpression(new SimpleDoubleProperty(12.2));
 
         assertThat(actual).hasValue(12.2);
+
+        assertThat(actual).hasSameValue(actual);
     }
+
 }

@@ -31,4 +31,15 @@ public class ObservableNumberValueAssert extends AbstractAssert<ObservableNumber
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ObservableNumberValueAssert hasSameValue(ObservableNumberValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
+        return this;
+    }
 }

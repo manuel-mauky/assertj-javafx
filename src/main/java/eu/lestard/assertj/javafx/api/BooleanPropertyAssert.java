@@ -1,8 +1,10 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableBooleanValueAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.value.ObservableBooleanValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -47,6 +49,18 @@ public class BooleanPropertyAssert extends AbstractAssert<BooleanPropertyAssert,
      */
     public BooleanPropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public BooleanPropertyAssert hasSameValue(ObservableBooleanValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

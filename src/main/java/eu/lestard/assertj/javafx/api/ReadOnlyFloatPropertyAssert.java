@@ -3,6 +3,7 @@ package eu.lestard.assertj.javafx.api;
 import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.property.ReadOnlyFloatProperty;
+import javafx.beans.value.ObservableNumberValue;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.data.Offset;
 
@@ -47,4 +48,15 @@ public class ReadOnlyFloatPropertyAssert extends AbstractAssert<ReadOnlyFloatPro
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ReadOnlyFloatPropertyAssert hasSameValue(ObservableNumberValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
+        return this;
+    }
 }

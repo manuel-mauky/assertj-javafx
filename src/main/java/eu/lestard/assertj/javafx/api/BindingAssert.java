@@ -1,8 +1,10 @@
 package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.BindingAssertions;
+import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.Binding;
+import javafx.beans.value.ObservableValue;
 import org.assertj.core.api.AbstractAssert;
 
 
@@ -60,6 +62,18 @@ public class BindingAssert<T> extends AbstractAssert<BindingAssert<T>, Binding<T
      */
     public BindingAssert<T> hasNotNullValue(){
         new BindingAssertions<>(actual).hasNotNullValue();
+        return this;
+    }
+
+    /**
+     * Verifies that the actual binding has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual bindings current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public BindingAssert<T> hasSameValue(ObservableValue<T> expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

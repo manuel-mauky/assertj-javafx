@@ -31,18 +31,24 @@ public class ObjectTest {
     public void testSimpleObjectProperty() {
         SimpleObjectProperty<TestPerson> actual = new SimpleObjectProperty<>(person);
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testObjectProperty() {
         ObjectProperty<TestPerson> actual = new SimpleObjectProperty<>(person);
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyObjectProperty(){
         ReadOnlyObjectProperty<TestPerson> actual = new SimpleObjectProperty<>(person);
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -51,6 +57,8 @@ public class ObjectTest {
         ObjectBinding<TestPerson> actual = Bindings.createObjectBinding(()-> person);
 
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -59,6 +67,8 @@ public class ObjectTest {
         Binding<TestPerson> actual = Bindings.createObjectBinding(()->person);
 
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -66,6 +76,8 @@ public class ObjectTest {
         ObjectExpression<TestPerson> actual = new SimpleObjectProperty<>(person);
 
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -74,5 +86,7 @@ public class ObjectTest {
         ObservableObjectValue<TestPerson> actual = new SimpleObjectProperty<>(person);
 
         assertThat(actual).hasValue(person);
+
+        assertThat(actual).hasSameValue(actual);
     }
 }

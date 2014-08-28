@@ -19,18 +19,25 @@ public class BooleanTest {
     public void testSimpleBooleanProperty() {
         SimpleBooleanProperty actual = new SimpleBooleanProperty(true);
         assertThat(actual).isTrue();
+
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testBooleanProperty() {
         BooleanProperty actual = new SimpleBooleanProperty(true);
         assertThat(actual).isTrue();
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyBooleanProperty(){
         ReadOnlyBooleanProperty actual = new SimpleBooleanProperty(true);
         assertThat(actual).isTrue();
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -41,6 +48,8 @@ public class BooleanTest {
         final BooleanBinding actual = value.not();
 
         assertThat(actual).isTrue();
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -48,6 +57,8 @@ public class BooleanTest {
         ObservableBooleanValue actual = new SimpleBooleanProperty(true);
 
         assertThat(actual).isTrue();
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -55,6 +66,8 @@ public class BooleanTest {
         final BooleanExpression actual = BooleanExpression.booleanExpression(new SimpleBooleanProperty(true));
 
         assertThat(actual).isTrue();
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 }

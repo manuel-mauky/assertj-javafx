@@ -2,6 +2,7 @@ package eu.lestard.assertj.javafx.api;
 
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.value.ObservableObjectValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -51,4 +52,16 @@ public class ReadOnlyObjectPropertyAssert<T> extends AbstractAssert<ReadOnlyObje
         return this;
     }
 
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public ReadOnlyObjectPropertyAssert<T> hasSameValue(ObservableObjectValue<T> expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
+        return this;
+    }
 }

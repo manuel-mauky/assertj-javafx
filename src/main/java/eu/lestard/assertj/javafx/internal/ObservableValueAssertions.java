@@ -40,4 +40,28 @@ public class ObservableValueAssertions<T> extends AbstractAssert<ObservableValue
             failWithMessage("Expected observable to not have a value of null");
         }
     }
+
+    public void hasSameValue(ObservableValue expectedValue) {
+        isNotNull();
+
+        if(expectedValue == null){
+            failWithMessage(EXPECTED_NOT_NULL);
+        }
+
+        if(expectedValue.getValue() == actual.getValue()){
+            return;
+        }
+
+        if(expectedValue.getValue() != null){
+            if(!expectedValue.getValue().equals(actual.getValue())){
+                failWithMessage("Expected observable to have a value of <%s> but was <%s>", actual.getValue(), expectedValue.getValue());
+            }
+        }
+
+        if(actual.getValue() != null){
+            if(!actual.getValue().equals(expectedValue.getValue())){
+                failWithMessage("Expected observable to have a value of <%s> but was <%s>", actual.getValue(), expectedValue.getValue());
+            }
+        }
+    }
 }

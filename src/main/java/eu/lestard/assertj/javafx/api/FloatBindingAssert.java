@@ -4,6 +4,7 @@ import eu.lestard.assertj.javafx.internal.ObservableNumberValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.FloatBinding;
+import javafx.beans.value.ObservableNumberValue;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.data.Offset;
 
@@ -61,4 +62,15 @@ public class FloatBindingAssert extends AbstractAssert<FloatBindingAssert, Float
         return this;
     }
 
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public FloatBindingAssert hasSameValue(ObservableNumberValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
+        return this;
+    }
 }

@@ -22,18 +22,24 @@ public class LongTest {
     public void testSimpleLongProperty() {
         SimpleLongProperty actual = new SimpleLongProperty(1l);
         assertThat(actual).hasValue(1l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testLongProperty() {
         LongProperty actual = new SimpleLongProperty(10l);
         assertThat(actual).hasValue(10l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyLongProperty(){
         ReadOnlyLongProperty actual = new SimpleLongProperty(30l);
         assertThat(actual).hasValue(30l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -44,6 +50,8 @@ public class LongTest {
         final LongBinding actual = value.add(20l);
 
         assertThat(actual).hasValue(30l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -51,6 +59,8 @@ public class LongTest {
         Binding<Long> actual = Bindings.createObjectBinding(() -> 20l);
 
         assertThat(actual).hasValue(20l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -58,6 +68,8 @@ public class LongTest {
         ObservableLongValue actual = new SimpleLongProperty(10l);
 
         assertThat(actual).hasValue(10l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -65,6 +77,8 @@ public class LongTest {
         ObservableNumberValue actual = new SimpleLongProperty(10l);
 
         assertThat(actual).hasValue(10l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -72,6 +86,8 @@ public class LongTest {
         final LongExpression actual = LongExpression.longExpression(new SimpleLongProperty(12l));
 
         assertThat(actual).hasValue(12l);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 }

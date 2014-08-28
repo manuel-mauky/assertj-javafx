@@ -3,6 +3,7 @@ package eu.lestard.assertj.javafx.api;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import javafx.beans.Observable;
 import javafx.beans.binding.IntegerBinding;
+import javafx.beans.value.ObservableNumberValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -40,6 +41,18 @@ public class IntegerBindingAssert extends AbstractAssert<IntegerBindingAssert, I
      */
     public IntegerBindingAssert dependsOn(Observable observable) {
         new BindingAssert<>(actual).dependsOn(observable);
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public IntegerBindingAssert hasSameValue(ObservableNumberValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

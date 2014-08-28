@@ -21,18 +21,24 @@ public class StringTest {
     public void testSimpleStringProperty() {
         SimpleStringProperty actual = new SimpleStringProperty("test");
         assertThat(actual).hasValue("test");
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testStringProperty() {
         StringProperty actual = new SimpleStringProperty("test");
         assertThat(actual).hasValue("test");
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyStringProperty(){
         ReadOnlyStringProperty actual = new SimpleStringProperty("test");
         assertThat(actual).hasValue("test");
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -42,6 +48,8 @@ public class StringTest {
         final StringBinding actual = property.asString();
 
         assertThat(actual).hasValue("12");
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -50,6 +58,8 @@ public class StringTest {
         Binding<String> actual = Bindings.createObjectBinding(()-> "test");
 
         assertThat(actual).hasValue("test");
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -57,6 +67,8 @@ public class StringTest {
         final StringExpression actual = Bindings.concat("hello", "world");
 
         assertThat(actual).hasValue("helloworld");
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -65,5 +77,7 @@ public class StringTest {
         ObservableStringValue actual = new SimpleStringProperty("test");
 
         assertThat(actual).hasValue("test");
+
+        assertThat(actual).hasSameValue(actual);
     }
 }

@@ -4,6 +4,7 @@ import eu.lestard.assertj.javafx.internal.ObservableStringValueAssertions;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableStringValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -59,6 +60,19 @@ public class StringPropertyAssert extends AbstractAssert<StringPropertyAssert, S
      */
     public StringPropertyAssert hasNotNullValue() {
         new ObservableValueAssertions<>(actual).hasNotNullValue();
+        return this;
+    }
+
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public StringPropertyAssert hasSameValue(ObservableStringValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

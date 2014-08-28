@@ -3,6 +3,7 @@ package eu.lestard.assertj.javafx.api;
 import eu.lestard.assertj.javafx.internal.ObservableValueAssertions;
 import eu.lestard.assertj.javafx.internal.PropertyAssertions;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.value.ObservableNumberValue;
 import org.assertj.core.api.AbstractAssert;
 
 /**
@@ -38,6 +39,18 @@ public class IntegerPropertyAssert extends AbstractAssert<IntegerPropertyAssert,
      */
     public IntegerPropertyAssert isBound() {
         new PropertyAssertions(actual).isBound();
+        return this;
+    }
+
+    /**
+     * Verifies that the actual observable has the same value as the given observable.
+     *
+     * @param expectedValue the observable value to compare with the actual observables current value.
+     *
+     * @return {@code this} assertion instance.
+     */
+    public IntegerPropertyAssert hasSameValue(ObservableNumberValue expectedValue) {
+        new ObservableValueAssertions<>(actual).hasSameValue(expectedValue);
         return this;
     }
 }

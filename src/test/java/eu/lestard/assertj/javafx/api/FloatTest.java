@@ -22,18 +22,24 @@ public class FloatTest {
     public void testSimpleFloatProperty() {
         SimpleFloatProperty actual = new SimpleFloatProperty(1f);
         assertThat(actual).hasValue(1f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testFloatProperty() {
         FloatProperty actual = new SimpleFloatProperty(10f);
         assertThat(actual).hasValue(10f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
     public void testReadOnlyFloatProperty(){
         ReadOnlyFloatProperty actual = new SimpleFloatProperty(30f);
         assertThat(actual).hasValue(30f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
 
@@ -44,6 +50,8 @@ public class FloatTest {
         final FloatBinding actual = value.add(20);
 
         assertThat(actual).hasValue(30f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -51,6 +59,8 @@ public class FloatTest {
         Binding<Float> actual = Bindings.createObjectBinding(() -> 20f);
 
         assertThat(actual).hasValue(20f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -58,6 +68,8 @@ public class FloatTest {
         ObservableFloatValue actual = new SimpleFloatProperty(10f);
 
         assertThat(actual).hasValue(10f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -65,6 +77,8 @@ public class FloatTest {
         ObservableNumberValue actual = new SimpleFloatProperty(10f);
 
         assertThat(actual).hasValue(10f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 
     @Test
@@ -72,5 +86,7 @@ public class FloatTest {
         final FloatExpression actual = FloatExpression.floatExpression(new SimpleFloatProperty(12f));
 
         assertThat(actual).hasValue(12f);
+
+        assertThat(actual).hasSameValue(actual);
     }
 }
