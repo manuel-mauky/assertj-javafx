@@ -41,9 +41,12 @@ public class RadiusExample {
 
 ## How to Use
 
-Gradle: 
+Gradle:
+
 ```groovy
-testCompile 'eu.lestard:assertj-javafx:0.1.1'
+dependencies {
+    testCompile 'eu.lestard:assertj-javafx:0.1.1'
+}
 ```
 
 Maven:
@@ -56,8 +59,28 @@ Maven:
 </dependency>
 ```
 
+## Use the current development version
+
+Snapshots of the current development version are available in the Sonatype OSS Snapshot repository.
+They are created and deployed automatically by the Travis-CI on every commit.
+
+Gradle:
+
+```groovy
+// add the sonatype snapshot repository
+repositories {
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    testCompile 'eu.lestard:assertj-javafx:0.1.2-SNAPSHOT'
+}
+
+```
 
 ## Links
-[JavaDoc](https://lestard.github.io/assertj-javafx/javadoc/0.1.2/)
+[JavaDoc](https://lestard.github.io/assertj-javafx/javadoc/0.1.1/)
 
 
