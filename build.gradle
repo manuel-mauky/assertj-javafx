@@ -17,7 +17,7 @@ repositories {
 }
 
 javadoc{
-    options.addStringOption("link","http://download.java.net/jdk8/jfxdocs/")
+    options.links "http://docs.oracle.com/javase/8/docs/api/", "http://docs.oracle.com/javase/8/javafx/api"
     exclude "**/internal/**"
 }
 
