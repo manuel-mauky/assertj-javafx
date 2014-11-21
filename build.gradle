@@ -18,13 +18,9 @@ repositories {
     mavenCentral()
 }
 
-javadoc{
-    options.links "http://docs.oracle.com/javase/8/docs/api/", "http://docs.oracle.com/javase/8/javafx/api"
-    exclude "**/internal/**"
-}
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
+    gradleVersion = '2.2'
 }
 
 
@@ -34,6 +30,13 @@ dependencies {
     // testing
     testCompile "junit:junit:4.11"
 }
+
+
+javadoc.options.links("https://docs.oracle.com/javase/8/javafx/api",
+        "https://docs.oracle.com/javase/8/docs/api",
+        "https://joel-costigliola.github.io/assertj/core/api")
+javadoc.exclude "**/internal/**"
+
 
 allprojects {
     gradle.projectsEvaluated {
