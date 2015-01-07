@@ -9,6 +9,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableObjectValue;
+import javafx.beans.value.ObservableValue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -89,4 +90,13 @@ public class ObjectTest {
 
         assertThat(actual).hasSameValue(actual);
     }
+
+    @Test
+    public void testObservableValue(){
+        ObservableValue<TestPerson> actual = new SimpleObjectProperty<>(person);
+
+        assertThat(actual).hasValue(person);
+        assertThat(actual).hasSameValue(actual);
+    }
 }
+

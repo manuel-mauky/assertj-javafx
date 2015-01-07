@@ -2,10 +2,7 @@ package eu.lestard.assertj.javafx.api;
 
 import javafx.beans.binding.*;
 import javafx.beans.property.*;
-import javafx.beans.value.ObservableBooleanValue;
-import javafx.beans.value.ObservableNumberValue;
-import javafx.beans.value.ObservableObjectValue;
-import javafx.beans.value.ObservableStringValue;
+import javafx.beans.value.*;
 
 /**
  * This is the central entry point for assertions for assertj-javafx.
@@ -157,6 +154,11 @@ public class Assertions {
      */
     public static <T> ObservableObjectValueAssert<T> assertThat(ObservableObjectValue<T> actual) {
         return new ObservableObjectValueAssert<>(actual);
+    }
+
+
+    public static <T> ObservableValueAssert<T> assertThat(ObservableValue<T> actual) {
+        return new ObservableValueAssert<>(actual);
     }
 
     /*************************************************************************/
