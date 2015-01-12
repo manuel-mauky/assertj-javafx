@@ -45,7 +45,7 @@ Gradle:
 
 ```groovy
 dependencies {
-    testCompile 'eu.lestard:assertj-javafx:0.2.0'
+    testCompile 'eu.lestard:assertj-javafx:0.3.0'
 }
 ```
 
@@ -54,7 +54,7 @@ Maven:
 <dependency>
     <groupId>eu.lestard</groupId>
     <artifactId>assertj-javafx</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -75,12 +75,10 @@ repositories {
 }
 
 dependencies {
-    testCompile 'eu.lestard:assertj-javafx:0.3.0-SNAPSHOT'
+    testCompile 'eu.lestard:assertj-javafx:0.4.0-SNAPSHOT'
 }
 
 ```
 
 ## Links
-[JavaDoc](https://lestard.github.io/assertj-javafx/javadoc/0.2.0/)
-
-
+[JavaDoc](https://lestard.github.io/assertj-javafx/javadoc/0.3.0/)
