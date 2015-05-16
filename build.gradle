@@ -20,12 +20,12 @@ repositories {
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2'
+    gradleVersion = '2.4'
 }
 
 
 dependencies {
-    compile "org.assertj:assertj-core:1.6.0"
+    compile "org.assertj:assertj-core:3.0.0"
 
     // testing
     testCompile "junit:junit:4.11"

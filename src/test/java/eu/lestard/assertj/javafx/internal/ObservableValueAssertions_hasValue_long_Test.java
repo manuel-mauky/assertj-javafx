@@ -23,7 +23,7 @@ public class ObservableValueAssertions_hasValue_long_Test {
             new ObservableValueAssertions<>(actual).hasValue(123L);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("<123L> but was <1234L>");
+            assertThat(error).hasMessageContaining("<123> but was <1234>");
         }
     }
 

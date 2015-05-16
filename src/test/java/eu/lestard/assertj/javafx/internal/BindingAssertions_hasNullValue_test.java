@@ -24,7 +24,7 @@ public class BindingAssertions_hasNullValue_test {
             new BindingAssertions<>(actual).hasNullValue();
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("value of null but was <\"test\">");
+            assertThat(error).hasMessageContaining("value of null but was <test>");
         }
     }
 

@@ -23,7 +23,7 @@ public class ObservableNumberValueAssertions_hasValue_float_with_offset_Test {
             new ObservableNumberValueAssertions(actual).hasValue(10.12F, offset(0.001F));
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("less than <0.001f> but difference was <0.0030002594f>");
+            assertThat(error).hasMessageContaining("less than <0.001> but difference was <0.0030002594>");
         }
     }
 

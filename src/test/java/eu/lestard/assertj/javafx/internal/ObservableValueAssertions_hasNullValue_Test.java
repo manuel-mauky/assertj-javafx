@@ -23,7 +23,7 @@ public class ObservableValueAssertions_hasNullValue_Test {
             new ObservableValueAssertions<>(actual).hasNullValue();
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("value of null but was <\"test\">");
+            assertThat(error).hasMessageContaining("value of null but was <test>");
         }
     }
 

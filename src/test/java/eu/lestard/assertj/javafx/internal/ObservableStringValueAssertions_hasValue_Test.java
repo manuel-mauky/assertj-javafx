@@ -35,7 +35,7 @@ public class ObservableStringValueAssertions_hasValue_Test {
             new ObservableStringValueAssertions(actual).hasValue("testest");
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("<\"testest\"> but was <\"test\">");
+            assertThat(error).hasMessageContaining("<testest> but was <test>");
         }
     }
 
@@ -47,7 +47,7 @@ public class ObservableStringValueAssertions_hasValue_Test {
             new ObservableStringValueAssertions(actual).hasValue("test");
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("<\"test\"> but was <null>");
+            assertThat(error).hasMessageContaining("<test> but was <null>");
         }
     }
 

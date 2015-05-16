@@ -23,7 +23,7 @@ public class ObservableValueAssertions_hasValue_float_Test {
             new ObservableValueAssertions<>(actual).hasValue(1234F);
             fail("Should throw an AssertionError");
         }catch(AssertionError error){
-            assertThat(error).hasMessageContaining("<1234.0f> but was <1234.56f>");
+            assertThat(error).hasMessageContaining("<1234.0> but was <1234.56>");
         }
     }
 
